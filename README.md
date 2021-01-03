@@ -1,0 +1,2 @@
+# stonks
+Stock analysis tools
