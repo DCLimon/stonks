@@ -68,7 +68,7 @@ class Equity(object):
 
 class Stock(Equity):
 
-    def __init__(self, symbol, equity_type='Stock', exchange=None,
+    def __init__(self, symbol, equity_type='stock', exchange=None,
                  sector=None):
         super().__init__(symbol, equity_type, exchange=None,
                          sector=None)
