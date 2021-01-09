@@ -6,6 +6,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from alpha_vantage.timeseries import TimeSeries
 
+from exceptions import EquityTypeMismatchError
+
 # initialize av API
 AV_API_KEY = 'AIDD24S6AW4MOOHG'
 ts = TimeSeries(key=AV_API_KEY, output_format='pandas')
@@ -72,5 +74,5 @@ class Stock(Equity):
                  sector=None):
         super().__init__(symbol, equity_type, exchange=None,
                          sector=None)
-
-
+        if equity_type != 'stock':
+            raise EquityTypeMismatchError(class_instance='Stock')
