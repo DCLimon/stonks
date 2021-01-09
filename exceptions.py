@@ -1,7 +1,7 @@
 """Public errors, exceptions, & warnings.
 
 Classes:
-EquityTypeMismatchError -- equity_value does not match Equity subclass.
+EquityTypeMismatchError -- equity_type does not match Equity subclass.
 
 """
 
@@ -25,6 +25,7 @@ class EquityTypeMismatchError(ValueError):
             else:
                 _class_name = type(self._class_instance).__name__
                 self._message = f"For Equity subclass of type" \
-                                f"{_class_name}, equity_value must be" \
+                                f"{_class_name}, equity_type must be" \
                                 f"'{_class_name.lower()}'"
+            return self._message
 
