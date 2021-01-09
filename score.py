@@ -10,7 +10,10 @@ from alpha_vantage.timeseries import TimeSeries
 AV_API_KEY = 'AIDD24S6AW4MOOHG'
 ts = TimeSeries(key=AV_API_KEY, output_format='pandas')
 
-symbolName = {
+
+class Equity(object):
+
+    symbol_name = {
         # symbol:common_name
         'MMM': '3M',
         'HON': 'Honeywell',
@@ -41,10 +44,7 @@ symbolName = {
         'LUV': 'Southwest Airlines'
     }
 
-
-class Equity(object):
-
-    def __init__(self, symbol, equity_type='stock', exchange=None,
+    def __init__(self, symbol, equity_type, exchange=None,
                  sector=None):
         self.symbol = symbol
         self.equity_type = equity_type
@@ -53,14 +53,24 @@ class Equity(object):
 
     @property
     def common_name(self):
-        if self.symbol in Equity.symbolName:
-            return Equity.symbolName[self.symbol]
+        if self.symbol in Equity.symbol_name:
+            return Equity.symbol_name[self.symbol]
         else:
             print('No common name defined for this symbol.\n')
             name = input('Enter common name: ')
             Equity.new_symbol(self.symbol, name)
-            return Equity.symbolName[self.symbol]
+            return Equity.symbol_name[self.symbol]
 
     @staticmethod
     def new_symbol(symbol, name):
-        Equity.symbolName[symbol] = name
+        Equity.symbol_name[symbol] = name
+
+
+class Stock(Equity):
+
+    def __init__(self, symbol, equity_type='Stock', exchange=None,
+                 sector=None):
+        super().__init__(symbol, equity_type, exchange=None,
+                         sector=None)
+
+
