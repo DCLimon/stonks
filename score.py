@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 from alpha_vantage.timeseries import TimeSeries
 
 from exceptions import EquityTypeMismatchError
+from exceptions import SectorError
 
 # initialize av API
 AV_API_KEY = 'AIDD24S6AW4MOOHG'
@@ -76,3 +77,42 @@ class Stock(Equity):
                          sector=None)
         if equity_type != 'stock':
             raise EquityTypeMismatchError(class_instance='Stock')
+
+
+class MarketSector:
+
+    # simple_name: detailed_name
+    sectors = [
+        'Consumer Discretionary',
+        'Real Estate',
+        'Utilities',
+        'Information Technology',
+        'Consumer Staples',
+        'Health Care',
+        'Communication Services',
+        'Energy',
+        'Financials',
+        'Industrials',
+        'Materials'
+    ]
+
+    def __init__(self, sector):
+        if sector in self.sectors:
+            self._sector = sector
+        else:
+            raise SectorError(f'sector must be in MarketSector.sectors')
+
+
+_sectors = {
+    'consumer discretionary': 'Consumer Discretionary',
+    'real estate': 'Real Estate',
+    'utilities': 'Utilities',
+    'it': 'Information Technology',
+    'staples': 'Consumer Staples',
+    'health': 'Health Care',
+    'comms': 'Communication Services',
+    'energy': 'Energy',
+    'finance': 'Financials',
+    'industrial': 'Industrials',
+    'materials': 'Materials'
+}

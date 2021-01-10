@@ -5,6 +5,7 @@ EquityTypeMismatchError -- equity_type does not match Equity subclass.
 
 """
 
+
 class EquityTypeMismatchError(ValueError):
     """Exception raised when equity_type attribute does not match type
     implied by specific Equity subclass.
@@ -29,3 +30,6 @@ class EquityTypeMismatchError(ValueError):
                                 f"'{self._class_instance.lower()}'."
             return self._message
 
+
+class SectorError(ValueError):
+    pass
