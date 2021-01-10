@@ -5,16 +5,18 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from alpha_vantage.timeseries import TimeSeries
+from alpha_vantage.fundamentaldata import FundamentalData
 
 from exceptions import EquityTypeMismatchError
 from exceptions import SectorError
 
 # initialize av API
-AV_API_KEY = 'AIDD24S6AW4MOOHG'
 ts = TimeSeries(key=AV_API_KEY, output_format='pandas')
 
 
 class Equity(object):
+
+    AV_API_KEY = 'AIDD24S6AW4MOOHG'
 
     symbol_name = {
         # symbol:common_name
@@ -71,12 +73,71 @@ class Equity(object):
 
 class Stock(Equity):
 
-    def __init__(self, symbol, equity_type='stock', exchange=None,
-                 sector=None):
-        super().__init__(symbol, equity_type, exchange=None,
-                         sector=None)
-        if equity_type != 'stock':
+    def __init__(self, symbol):
+        super().__init__(symbol)
+
+    @property
+    def equity_type(self):
+        if 'Stock' in self._metadata()['Equity Type']:
+            return 'Stock'
+        else:
             raise EquityTypeMismatchError(class_instance='Stock')
+
+    @property
+    def exchange(self):
+        return self._metadata()['Exchange']
+
+    @property
+    def sector(self):
+        return self._metadata()['Sector']
+
+    @property
+    def industry(self):
+        return self._metadata()['Industry']
+
+    def _metadata(self):
+        # Make Series with all (raw) output from alpha_vantage json.
+        raw = pd.Series(
+            FundamentalData(
+                key=Stock.AV_API_KEY, output_format='json'
+            ).get_company_overview('MRK')[0]
+        )
+
+        # Trim raw into only rows wanted as metadata.
+        trimmed = raw[[
+            'Symbol',
+            'Name',
+            'Description',
+            'Address',
+            'AssetType',
+            'Currency',
+            'Country',
+            'Exchange',
+            'Sector',
+            'Industry',
+            'FullTimeEmployees',
+            'FiscalYearEnd',
+            'LatestQuarter'
+        ]]
+        trimmed.index = [
+            'Symbol',
+            'Name',
+            'Description',
+            'Address',
+            'Equity Type',
+            'Currency',
+            'Country',
+            'Exchange',
+            'Sector',
+            'Industry',
+            'Full-time Employees',
+            'FY End',
+            'Latest Quarter'
+        ]
+        trimmed.name = f'{self.symbol} Metadata'
+
+        return trimmed
+
 
 
 class MarketSector:

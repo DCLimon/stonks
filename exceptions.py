@@ -27,7 +27,7 @@ class EquityTypeMismatchError(ValueError):
                 self._message = f"For Equity subclass of type " \
                                 f"{self._class_instance}, " \
                                 f"equity_type must be " \
-                                f"'{self._class_instance.lower()}'."
+                                f"'{self._class_instance}'."
             return self._message
 
 
