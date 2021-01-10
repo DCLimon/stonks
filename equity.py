@@ -10,9 +10,6 @@ from alpha_vantage.fundamentaldata import FundamentalData
 from exceptions import EquityTypeMismatchError
 from exceptions import SectorError
 
-# initialize av API
-ts = TimeSeries(key=AV_API_KEY, output_format='pandas')
-
 
 class Equity(object):
 
@@ -94,6 +91,10 @@ class Stock(Equity):
     @property
     def industry(self):
         return self._metadata()['Industry']
+
+    @property
+    def name(self):
+        return self._metadata()['Name']
 
     def _metadata(self):
         # Make Series with all (raw) output from alpha_vantage json.
