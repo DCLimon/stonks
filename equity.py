@@ -140,7 +140,6 @@ class Stock(Equity):
         return trimmed
 
 
-
 class MarketSector:
 
     # simple_name: detailed_name
