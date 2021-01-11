@@ -106,34 +106,14 @@ class Stock(Equity):
 
         # Trim raw into only rows wanted as metadata.
         trimmed = raw[[
-            'Symbol',
-            'Name',
-            'Description',
-            'Address',
-            'AssetType',
-            'Currency',
-            'Country',
-            'Exchange',
-            'Sector',
-            'Industry',
-            'FullTimeEmployees',
-            'FiscalYearEnd',
-            'LatestQuarter'
+            'Symbol', 'Name', 'Description', 'Address', 'AssetType',
+            'Currency', 'Country', 'Exchange', 'Sector', 'Industry',
+            'FullTimeEmployees', 'FiscalYearEnd', 'LatestQuarter'
         ]]
         trimmed.index = [
-            'Symbol',
-            'Name',
-            'Description',
-            'Address',
-            'Equity Type',
-            'Currency',
-            'Country',
-            'Exchange',
-            'Sector',
-            'Industry',
-            'Full-time Employees',
-            'FY End',
-            'Latest Quarter'
+            'Symbol', 'Name', 'Description', 'Address', 'Equity Type',
+            'Currency', 'Country', 'Exchange', 'Sector', 'Industry',
+            'Full-time Employees', 'FY End', 'Latest Quarter'
         ]
         trimmed.name = f'{self.symbol} Metadata'
 
