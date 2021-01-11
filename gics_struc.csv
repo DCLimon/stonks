@@ -1,0 +1,169 @@
+﻿Sector,Industry Group,Industry,Sub-Industry
+Energy,Energy,Energy Equipment & Services,Oil & Gas Drilling
+,,,Oil & Gas Equipment & Services
+,,"Oil, Gas & Consumable Fuels",Integrated Oil & Gas
+,,,Oil & Gas Exploration & Production
+,,,Oil & Gas Refining & Marketing
+,,,Oil & Gas Storage & Transportation
+,,,Coal & Consumable Fuels
+Materials,Materials,Chemicals,Commodity Chemicals
+,,,Diversified Chemicals
+,,,Fertilizers & Agricultural Chemicals
+,,,Industrial Gases
+,,,Specialty Chemicals
+,,Construction Materials,Construction Materials
+,,Containers & Packaging,Metal & Glass Containers
+,,,Paper Packaging
+,,Metals & Mining,Aluminum
+,,,Diversified Metals & Mining
+,,,Copper
+,,,Gold
+,,,Precious Metals & Minerals
+,,,Silver
+,,,Steel
+,,Paper & Forest Products,Forest Products
+,,,Paper Products
+Industrials,Capital Goods,Aerospace & Defense,Aerospace & Defense
+,,Building Products,Building Products
+,,Construction & Engineering,Construction & Engineering
+,,Electrical Equipment,Electrical Components & Equipment
+,,,Heavy Electrical Equipment
+,,Industrial Conglomerates,Industrial Conglomerates
+,,Machinery,Construction Machinery & Heavy Trucks
+,,,Agricultural & Farm Machinery
+,,,Industrial Machinery
+,,Trading Companies & Distributors,Trading Companies & Distributors
+,Commercial  & Professional Services,Commercial Services & Supplies,Commercial Printing
+,,,Environmental & Facilities Services
+,,,Office Services & Supplies
+,,,Diversified Support Services
+,,,Security & Alarm Services
+,,Professional Services,Human Resource & Employment Services
+,,,Research & Consulting Services
+,Transportation,Air Freight & Logistics,Air Freight & Logistics
+,,Airlines,Airlines
+,,Marine,Marine
+,,Road & Rail,Railroads
+,,,Trucking
+,,Transportation Infrastructure,Airport Services
+,,,Highways & Railtracks
+,,,Marine Ports & Services
+Consumer Discretionary,Automobiles & Components,Auto Components,Auto Parts & Equipment
+,,,Tires & Rubber
+,,Automobiles,Automobile Manufacturers
+,,,Motorcycle Manufacturers
+,Consumer Durables & Apparel,Household Durables,Consumer Electronics
+,,,Home Furnishings
+,,,Homebuilding
+,,,Household Appliances
+,,,Housewares & Specialties
+,,Leisure Products,Leisure Products
+,,"Textiles, Apparel & Luxury Goods","Apparel, Accessories & Luxury Goods"
+,,,Footwear
+,,,Textiles
+,Consumer Services,"Hotels, Restaurants & Leisure",Casinos & Gaming
+,,,"Hotels, Resorts & Cruise Lines"
+,,,Leisure Facilities
+,,,Restaurants
+,,Diversified Consumer Services,Education Services
+,,,Specialized Consumer Services
+,"Media (discontinued effective close of September 28, 2018)","Media (discontinued effective close of September 28, 2018)","Advertising (discontinued effective close of September 28, 2018)"
+,,,"Broadcasting (discontinued effective close of September 28, 2018)"
+,,,"Cable & Satellite (discontinued effective close of September 28, 2018)"
+,,,"Movies & Entertainment (discontinued effective close of September 28, 2018)"
+,,,"Publishing (discontinued effective close of September 28, 2018)"
+,Retailing,Distributors,Distributors
+,,Internet & Direct Marketing Retail,Internet & Direct Marketing Retail
+,,Multiline Retail,Department Stores
+,,,General Merchandise Stores
+,,Specialty Retail,Apparel Retail
+,,,Computer & Electronics Retail
+,,,Home Improvement Retail
+,,,Specialty Stores
+,,,Automotive Retail
+,,,Homefurnishing Retail
+Consumer Staples,Food & Staples Retailing,Food & Staples Retailing,Drug Retail
+,,,Food Distributors
+,,,Food Retail
+,,,Hypermarkets & Super Centers
+,"Food, Beverage & Tobacco",Beverages,Brewers
+,,,Distillers & Vintners
+,,,Soft Drinks
+,,Food Products,Agricultural Products
+,,,Packaged Foods & Meats
+,,Tobacco,Tobacco
+,Household & Personal Products,Household Products,Household Products
+,,Personal Products,Personal Products
+Health Care,Health Care Equipment & Services,Health Care Equipment & Supplies,Health Care Equipment
+,,,Health Care Supplies
+,,Health Care Providers & Services,Health Care Distributors
+,,,Health Care  Services
+,,,Health Care Facilities
+,,,Managed Health Care
+,,Health Care Technology,Health Care Technology
+,"Pharmaceuticals, Biotechnology & Life Sciences",Biotechnology,Biotechnology
+,,Pharmaceuticals,Pharmaceuticals
+,,Life Sciences Tools & Services,Life Sciences Tools & Services
+Financials,Banks,Banks,Diversified Banks
+,,,Regional Banks
+,,Thrifts & Mortgage Finance,Thrifts & Mortgage Finance
+,Diversified Financials,Diversified Financial Services,Other Diversified Financial Services
+,,,Multi-Sector Holdings
+,,,Specialized Finance
+,,Consumer Finance,Consumer Finance
+,,Capital Markets,Asset Management & Custody Banks
+,,,Investment Banking & Brokerage
+,,,Diversified Capital Markets
+,,,Financial Exchanges & Data
+,,"Mortgage Real Estate Investment 
+Trusts (REITs)",Mortgage REITs
+,Insurance,Insurance,Insurance Brokers
+,,,Life & Health Insurance
+,,,Multi-line Insurance
+,,,Property & Casualty Insurance
+,,,Reinsurance
+Information Technology,Software & Services,"Internet Software & Services (discontinued effective close of September 28, 2018)","Internet Software & Services (discontinued effective close of September 28, 2018)"
+,,IT Services,IT Consulting & Other Services
+,,,Data Processing & Outsourced Services
+,,,Internet Services & Infrastructure
+,,Software,Application Software
+,,,Systems Software
+,,,"Home Entertainment Software (discontinued effective close of September 28, 2018)"
+,Technology Hardware & Equipment,Communications Equipment,Communications Equipment
+,,"Technology Hardware, Storage & Peripherals","Technology Hardware, Storage & Peripherals"
+,,"Electronic Equipment, Instruments & Components",Electronic Equipment & Instruments 
+,,,Electronic Components
+,,,Electronic Manufacturing Services
+,,,Technology Distributors
+,Semiconductors & Semiconductor Equipment,Semiconductors & Semiconductor Equipment,Semiconductor Equipment 
+,,,Semiconductors
+Communication Services,Telecommunication Services,Diversified Telecommunication Services,Alternative Carriers
+,,,Integrated Telecommunication Services
+,,Wireless Telecommunication Services,Wireless Telecommunication Services
+,Media & Entertainment,Media,Advertising
+,,,Broadcasting
+,,,Cable & Satellite
+,,,Publishing
+,,Entertainment,Movies & Entertainment
+,,,Interactive Home Entertainment
+,,Interactive Media & Services,Interactive Media & Services
+Utilities,Utilities,Electric Utilities,Electric Utilities
+,,Gas Utilities,Gas Utilities
+,,Multi-Utilities,Multi-Utilities
+,,Water Utilities,Water Utilities
+,,Independent Power and Renewable Electricity Producers,Independent Power Producers & Energy Traders
+,,,Renewable Electricity 
+Real Estate,Real Estate,"Equity Real Estate 
+Investment Trusts 
+(REITs)",Diversified REITs
+,,,Industrial REITs
+,,,Hotel & Resort REITs 
+,,,Office REITs 
+,,,Health Care REITs 
+,,,Residential REITs
+,,,Retail REITs
+,,,Specialized REITs 
+,,Real Estate Management & Development,Diversified Real Estate Activities 
+,,,Real Estate Operating Companies
+,,,Real Estate Development 
+,,,Real Estate Services 
