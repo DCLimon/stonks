@@ -3,43 +3,61 @@ import numpy as np
 
 from equity import Stock
 
-stock_sector_series = pd.read_csv(
+# from .csv, read in a Series where index is the symbols of all
+# constituents of S&P 500 index.
+_sp500_sectors = pd.read_csv(
     'sp500_constituents.csv',
     header=None,
     names=['Sector', 'Symbol'],
     index_col='Symbol',
-    squeeze=True  # Returns Series <=> data only has 1 column (o/w
-                  # will return a 1-column df object.
+    squeeze=True  # Return Series <=> 1 data column (o/w returns df).
 )
 
-# raw_struc has no repeated values, so produces many Nan cells.
-raw_struc = pd.read_csv(
+# .csv columns are nested data (Each Sector has unique set of
+# Industries, which has unique set of Sub-Industries), but higher-level
+# columns do not repeat their data in every applicable row. This leaves
+# many rows with NaN data, & unusable as column or a MultiIndex.
+_gics_struc = pd.read_csv(
+    # Nested data structure formatted poorly in source file, giving many
+    # blank/NaN cells; more info in _fill_nested_df() docstring.
     'gics_struc.csv',
     header=0,
     names=['Sector', 'Industry Group', 'Industry', 'Sub-Industry'],
     index_col=None,
 )
 
-for row in np.arange(1, raw_struc.index.size):
-    for column in raw_struc.columns:
-        if raw_struc.isna().iloc[row][column]:
-            raw_struc.iloc[row][column] = raw_struc.iloc[row-1][column]
 
-# Make a MultiIndex object; take raw_struc column Series, remove NaN
-# cells, then take values as lists to use in MultiIndex.from_product().
-gics_index = pd.MultiIndex.from_product(
-    [
-        raw_struc['Sector'].dropna().values,
-        raw_struc['Industry Group'].dropna().values,
-        raw_struc['Industry'].dropna().values,
-        raw_struc['Sub-Industry'].dropna().values
-    ]
-)
+def _fill_nested_df(df):
+    """Fill all rows within columns represented nested data.
+
+    Poor data source formatting for nested index data where higher-level
+    columns do not repeat their values in every applicable row creates a
+    df with many NaN cells. This is unusable as in column nor is it
+    easily converted to a MultiIndex. MultiIndex.from_product()
+    creates factorial/crossed index: ALL levels of subordinate
+    indices repeat at EVERY level of a higher-order index, e.g. EVERY
+    level of mammal_species has BOTH levels of sub-index 'sex' (M & F).
+
+    See gics_struc.csv for example of poorly formatted nested data. In
+    nested data/indices, levels of a sub-index are are unique to the
+    level of the higher-order index under which it falls. In the example
+    of gics_struc, the 'Pharmaceuticals' Industry only occurs within the
+    'Health Care' Sector, while the IT Sector has its own unique set of
+    Industries.
+    """
+    for row in np.arange(1, df.index.size):
+        for column in df.columns:
+            if df.isna().iloc[row][column]:
+                df.iloc[row][column] = df.iloc[row-1][column]
+    return df
 
 
 class GICS:
 
-    _sp500_stock_list = stock_sector_series.index.values
+    # Fill all _gics_struc rows with appropriate column data.
+    _index = pd.MultiIndex.from_frame(_fill_nested_df(_gics_struc))
+
+    _sp500_stock_list = _sp500_sectors.index.values
 
     # planned df for GICS Sector/Industry/Sub-industry/etc. structure
     # _structure = pd.DataFrame()
