@@ -7,8 +7,8 @@ from equity import Stock
 # constituents of S&P 500 index.
 _sp500_sectors = pd.read_csv(
     'sp500_constituents.csv',
-    header=None,
-    names=['Sector', 'Symbol'],
+    header=0,
+    names=['Symbol', 'GICS Sector', 'GICS Sub-Industry'],
     index_col='Symbol',
     squeeze=True  # Return Series <=> 1 data column (o/w returns df).
 )
@@ -25,6 +25,8 @@ _gics_struc = pd.read_csv(
     names=['Sector', 'Industry Group', 'Industry', 'Sub-Industry'],
     index_col=None,
 )
+
+
 
 
 def _fill_nested_df(df):
@@ -52,10 +54,13 @@ def _fill_nested_df(df):
     return df
 
 
+
+
+
 class GICS:
 
     # Fill all _gics_struc rows with appropriate column data.
-    _index = pd.MultiIndex.from_frame(_fill_nested_df(_gics_struc))
+    _industry_struc = _fill_nested_df(_gics_struc)
 
     _sp500_stock_list = _sp500_sectors.index.values
 
