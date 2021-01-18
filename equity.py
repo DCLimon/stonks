@@ -36,31 +36,32 @@ class Equity(object):
 
 class Stock(Equity):
 
-    def __init__(self, symbol):
-        super().__init__(symbol)
+    def __init__(self, symbol, equity_type='Stock'):
+        super().__init__(symbol, equity_type)
+        self.equity_type = 'Stock'
 
-    @property
-    def equity_type(self):
-        if 'Stock' in self._metadata()['Equity Type']:
-            return 'Stock'
-        else:
-            raise EquityTypeMismatchError(class_instance='Stock')
+    # @property
+    # def equity_type(self):
+    #     if 'Stock' in self._metadata()['Equity Type']:
+    #         return 'Stock'
+    #     else:
+    #         raise EquityTypeMismatchError(class_instance='Stock')
 
     @property
     def exchange(self):
-        return self._metadata()['Exchange']
+        return self._metadata['Exchange']
 
     @property
     def sector(self):
-        return self._metadata()['Sector']
+        return self._metadata['Sector']
 
     @property
     def industry(self):
-        return self._metadata()['Industry']
+        return self._metadata['Industry']
 
     @property
     def name(self):
-        return self._metadata()['Name']
+        return self._metadata['Name']
 
     @property
     def _metadata(self):

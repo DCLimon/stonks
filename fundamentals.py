@@ -9,8 +9,10 @@ from equity import Stock
 
 
 class Overview(Stock):
-    def __init__(self, symbol):
-        super().__init__(symbol)
+    def __init__(self, symbol, equity_type):
+        super().__init__(symbol, equity_type)
+        self.equity_type = 'Stock'
+
 
     @property
     def overview(self):
@@ -56,9 +58,10 @@ class Overview(Stock):
         return ov_data_series
 
 
-class BalanceSheet(Stock):
-    def __init__(self, symbol):
-        super().__init__(symbol)
+class BalanceSheet(Overview):
+    def __init__(self, symbol, equity_type):
+        super().__init__(symbol, equity_type)
+        self.equity_type = 'Stock'
 
     @property
     def balance_sheet(self):
@@ -89,7 +92,7 @@ class BalanceSheet(Stock):
                 'liabilitiesAndShareholderEquity': 'Liab & SH EQ',
                 'cashAndShortTermInvestments': 'Cash & ST Invest',
                 'accumulatedDepreciation': 'Accum Depreciation',
-                'commonStockSharesOutstanding': 'C-Stock Out Shares'
+                'commonStockSharesOutstanding': 'Common Shares Out'
             }, inplace=True
         )
         b_sheet.set_index('Fisc Period End',
@@ -97,3 +100,5 @@ class BalanceSheet(Stock):
                           append=False,
                           inplace=True)
         b_sheet.drop(columns=['Reported Currency'])
+
+
