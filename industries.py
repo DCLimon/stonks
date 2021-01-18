@@ -62,37 +62,87 @@ class GICS:
 
     _sp500_stock_list = _sp500_sectors.index.values
 
-    def __init__(self, level, group):
+    def __init__(self, sector, industry=None, subindustry=None):
+        self.sector = sector
+        self.industry = industry
+        self.subindustry = subindustry
 
-        if not GICS._industry_struc.columns.str.contains(level).any:
-            raise ValueError("Invalid value for level: must be "
-                             "'Sector', 'Industry', or 'Sub-Industry'.")
-        elif not GICS._industry_struc[level].str.contains(group).any():
-            # Check that 'group' exists within 'level', e.g.
-            # 'Shoemaking' is not a valid GICS Sector.
-            raise ValueError("Specified 'group' value is not an valid "
-                             "type of 'level'.")
-        elif level == 'Sector':
-            self.sector = group
-        elif level == 'Industry':
-            self.industry = group
-            self.sector = GICS._industry_struc.loc[
-                GICS._industry_struc[
-                    'Industry'
-                ]
-                == self.industry, 'Sector'
-            ].iloc[0]
-        elif level == 'Sub-Industry':
-            self.subindustry = group
-            self.industry = GICS._industry_struc.loc[
-                GICS._industry_struc[
-                    'Sub-Industry'
-                ]
-                == self.subindustry, 'Industry'
-            ].iloc[0]
-            self.sector = GICS._industry_struc.loc[
-                GICS._industry_struc[
-                    'Industry'
-                ]
-                == self.subindustry, 'Sector'
-            ].iloc[0]
+    @property
+    def sector(self):
+        return self._sector
+
+    @sector.setter
+    def sector(self, value):
+        if not GICS._industry_struc.columns.str.contains(
+                self.sector).any():
+            raise ValueError('sector must be valid GICS Sector.')
+
+        self._sector = value
+
+    @property
+    def industry(self):
+        return self._sector
+
+    @industry.setter
+    def industry(self, value):
+        if not GICS._industry_struc.columns.str.contains(
+                self.industry).any():
+            raise ValueError('industry must be valid GICS Industry.')
+
+        self._industry = value
+
+    @property
+    def subindustry(self):
+        return self._subindustry
+
+    @subindustry.setter
+    def subindustry(self, value):
+        if not GICS._industry_struc.columns.str.contains(
+                self.subindustry).any():
+            raise ValueError('subindustry must be valid GICS'
+                             'Sub-Industry')
+
+        self._subindustry = value
+
+
+# class GICS:
+#
+#     # Fill all _gics_struc rows with appropriate column data.
+#     _industry_struc = _fill_nested_df(_gics_struc)
+#
+#     _sp500_stock_list = _sp500_sectors.index.values
+#
+#     def __init__(self, level, group):
+#
+#         if not GICS._industry_struc.columns.str.contains(level).any():
+#             raise ValueError("Invalid value for level: must be "
+#                              "'Sector', 'Industry', or 'Sub-Industry'.")
+#         elif not GICS._industry_struc[level].str.contains(group).any():
+#             # Check that 'group' exists within 'level', e.g.
+#             # 'Shoemaking' is not a valid GICS Sector.
+#             raise ValueError("Specified 'group' value is not an valid "
+#                              "type of 'level'.")
+#         elif level == 'Sector':
+#             self.sector = group
+#         elif level == 'Industry':
+#             self.industry = group
+#             self.sector = GICS._industry_struc.loc[
+#                 GICS._industry_struc[
+#                     'Industry'
+#                 ]
+#                 == self.industry, 'Sector'
+#             ].iloc[0]
+#         elif level == 'Sub-Industry':
+#             self.subindustry = group
+#             self.industry = GICS._industry_struc.loc[
+#                 GICS._industry_struc[
+#                     'Sub-Industry'
+#                 ]
+#                 == self.subindustry, 'Industry'
+#             ].iloc[0]
+#             self.sector = GICS._industry_struc.loc[
+#                 GICS._industry_struc[
+#                     'Industry'
+#                 ]
+#                 == self.subindustry, 'Sector'
+#             ].iloc[0]
