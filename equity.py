@@ -1,6 +1,3 @@
-import datetime
-from pprint import pprint
-
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -14,37 +11,6 @@ from exceptions import SectorError
 class Equity(object):
 
     AV_API_KEY = 'AIDD24S6AW4MOOHG'
-
-    symbol_name = {
-        # symbol:common_name
-        'MMM': '3M',
-        'HON': 'Honeywell',
-        'GE': 'GE',
-        'TEVA': 'Teva',
-        'MDT': 'Medtronic',
-        'F': 'Ford',
-        'ABT': 'Abbott',
-        'BA': 'Boeing',
-        'EADSY': 'Airbus',
-        'SLB': 'Schlumberger',
-        'DAL': 'Delta',
-        'UAL': 'United Airlines',
-        'XOM': 'Exxon',
-        'RTX': 'Raytheon',
-        'LHX': 'L3Harris',
-        'GD': 'General Dynamics',
-        'WBA': 'Walgreens,',
-        'VTRS': 'Viatris',
-        'AAPL': 'Apple',
-        'BDX': 'BD',
-        'CVS': 'CVS',
-        'HAL': 'Halliburton',
-        'MSFT': 'Microsoft',
-        'NVDA': 'Nvidia',
-        'PFE': 'Pfizer',
-        'RDS.B': 'Shell',
-        'LUV': 'Southwest Airlines'
-    }
 
     def __init__(self, symbol, equity_type, exchange=None,
                  sector=None):
@@ -96,6 +62,7 @@ class Stock(Equity):
     def name(self):
         return self._metadata()['Name']
 
+    @property
     def _metadata(self):
         # Make Series with all (raw) output from alpha_vantage json.
         raw = pd.Series(
