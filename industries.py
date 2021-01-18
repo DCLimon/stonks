@@ -62,5 +62,37 @@ class GICS:
 
     _sp500_stock_list = _sp500_sectors.index.values
 
-    # planned df for GICS Sector/Industry/Sub-industry/etc. structure
-    # _structure = pd.DataFrame()
+    def __init__(self, level, group):
+
+        if not GICS._industry_struc.columns.str.contains(level).any:
+            raise ValueError("Invalid value for level: must be "
+                             "'Sector', 'Industry', or 'Sub-Industry'.")
+        elif not GICS._industry_struc[level].str.contains(group).any():
+            # Check that 'group' exists within 'level', e.g.
+            # 'Shoemaking' is not a valid GICS Sector.
+            raise ValueError("Specified 'group' value is not an valid "
+                             "type of 'level'.")
+        elif level == 'Sector':
+            self.sector = group
+        elif level == 'Industry':
+            self.industry = group
+            self.sector = GICS._industry_struc.loc[
+                GICS._industry_struc[
+                    'Industry'
+                ]
+                == self.industry, 'Sector'
+            ].iloc[0]
+        elif level == 'Sub-Industry':
+            self.subindustry = group
+            self.industry = GICS._industry_struc.loc[
+                GICS._industry_struc[
+                    'Sub-Industry'
+                ]
+                == self.subindustry, 'Industry'
+            ].iloc[0]
+            self.sector = GICS._industry_struc.loc[
+                GICS._industry_struc[
+                    'Industry'
+                ]
+                == self.subindustry, 'Sector'
+            ].iloc[0]
