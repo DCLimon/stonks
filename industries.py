@@ -1,8 +1,6 @@
 import pandas as pd
 import numpy as np
 
-from equity import Stock
-
 _sp500_sectors = pd.read_csv(
     # from .csv, read in a Series where index is the symbols of all
     # constituents of S&P 500 index.
