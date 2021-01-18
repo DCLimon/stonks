@@ -73,11 +73,12 @@ class GICS:
 
     @sector.setter
     def sector(self, value):
-        if not GICS._industry_struc.columns.str.contains(
-                self.sector).any():
+        if not value:
+            self._sector = None
+        elif not GICS._industry_struc.columns.str.contains(self.sector).any():
             raise ValueError('sector must be valid GICS Sector.')
-
-        self._sector = value
+        else:
+            self._sector = value
 
     @property
     def industry(self):
@@ -85,11 +86,12 @@ class GICS:
 
     @industry.setter
     def industry(self, value):
-        if not GICS._industry_struc.columns.str.contains(
-                self.industry).any():
+        if not value:
+            self._industry = None
+        elif not GICS._industry_struc.columns.str.contains(value).any():
             raise ValueError('industry must be valid GICS Industry.')
-
-        self._industry = value
+        else:
+            self._industry = value
 
     @property
     def subindustry(self):
@@ -97,12 +99,13 @@ class GICS:
 
     @subindustry.setter
     def subindustry(self, value):
-        if not GICS._industry_struc.columns.str.contains(
-                self.subindustry).any():
+        if not value:
+            self._subindustry = None
+        elif not GICS._industry_struc.columns.str.contains(value).any():
             raise ValueError('subindustry must be valid GICS'
                              'Sub-Industry')
-
-        self._subindustry = value
+        else:
+            self._subindustry = value
 
 
 # class GICS:
