@@ -7,6 +7,8 @@ from alpha_vantage.fundamentaldata import FundamentalData
 from exceptions import EquityTypeMismatchError
 from exceptions import SectorError
 
+import industries
+
 
 class Equity(object):
 
@@ -19,26 +21,34 @@ class Equity(object):
         self.exchange = exchange
         self.sector = sector
 
-    @property
-    def common_name(self):
-        if self.symbol in Equity.symbol_name:
-            return Equity.symbol_name[self.symbol]
-        else:
-            print('No common name defined for this symbol.\n')
-            name = input('Enter common name: ')
-            Equity.new_symbol(self.symbol, name)
-            return Equity.symbol_name[self.symbol]
+    # @property
+    # def common_name(self):
+    #     if self.symbol in Equity.symbol_name:
+    #         return Equity.symbol_name[self.symbol]
+    #     else:
+    #         print('No common name defined for this symbol.\n')
+    #         name = input('Enter common name: ')
+    #         Equity.new_symbol(self.symbol, name)
+    #         return Equity.symbol_name[self.symbol]
+    #
+    # @staticmethod
+    # def new_symbol(symbol, name):
+    #     Equity.symbol_name[symbol] = name
 
-    @staticmethod
-    def new_symbol(symbol, name):
-        Equity.symbol_name[symbol] = name
 
+class Stock:
 
-class Stock(Equity):
+    def __init__(self, symbol):
+        self.symbol = symbol
+        # super().__init__(symbol, equity_type)
+        # self.equity_type = 'Stock'
+        # self.sector = sector
+        # self.industry = industry
+        # self.subindustry = subindustry
 
-    def __init__(self, symbol, equity_type='Stock'):
-        super().__init__(symbol, equity_type)
-        self.equity_type = 'Stock'
+    def classify(self, sector, industry=None, subindustry=None):
+        gics = industries.GICS(sector, industry, subindustry)
+        return gics
 
     # @property
     # def equity_type(self):
@@ -47,21 +57,25 @@ class Stock(Equity):
     #     else:
     #         raise EquityTypeMismatchError(class_instance='Stock')
 
-    @property
-    def exchange(self):
-        return self._metadata['Exchange']
-
-    @property
-    def sector(self):
-        return self._metadata['Sector']
-
-    @property
-    def industry(self):
-        return self._metadata['Industry']
-
-    @property
-    def name(self):
-        return self._metadata['Name']
+    # @property
+    # def exchange(self):
+    #     return self._metadata['Exchange']
+    #
+    # @property
+    # def sector(self):
+    #     return self._metadata['Sector']
+    #
+    # @sector.setter
+    # def sector(self, value):
+    #     self._sp500 = industries.GICS(self.symbol, value)
+    #
+    # @property
+    # def industry(self):
+    #     return self._metadata['Industry']
+    #
+    # @property
+    # def name(self):
+    #     return self._metadata['Name']
 
     @property
     def _metadata(self):
