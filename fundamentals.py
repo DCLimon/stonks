@@ -13,7 +13,6 @@ class Overview(Stock):
         super().__init__(symbol, equity_type)
         self.equity_type = 'Stock'
 
-
     @property
     def overview(self):
         ov_data_series = pd.Series(
@@ -59,7 +58,7 @@ class Overview(Stock):
 
 
 class BalanceSheet(Overview):
-    def __init__(self, symbol, equity_type):
+    def __init__(self, symbol, equity_type='Stock'):
         super().__init__(symbol, equity_type)
         self.equity_type = 'Stock'
 
@@ -100,5 +99,7 @@ class BalanceSheet(Overview):
                           append=False,
                           inplace=True)
         b_sheet.drop(columns=['Reported Currency'])
+
+        return b_sheet
 
 
