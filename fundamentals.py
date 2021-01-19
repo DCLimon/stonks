@@ -9,9 +9,8 @@ from equity import Stock
 
 
 class Overview(Stock):
-    def __init__(self, symbol, equity_type):
-        super().__init__(symbol, equity_type)
-        self.equity_type = 'Stock'
+    def __init__(self, symbol):
+        super().__init__(symbol)
 
     @property
     def overview(self):
@@ -57,19 +56,31 @@ class Overview(Stock):
         return ov_data_series
 
 
-class BalanceSheet(Overview):
-    def __init__(self, symbol, equity_type='Stock'):
-        super().__init__(symbol, equity_type)
-        self.equity_type = 'Stock'
+class BalanceSheet(Stock):
+    def __init__(self, symbol, freq='quarterly', periods=5):
+        super().__init__(symbol)
+        self.freq = freq
+        self.periods = periods
 
     @property
     def balance_sheet(self):
-        b_sheet = pd.DataFrame(
-            FundamentalData(
-                key=Overview.AV_API_KEY, output_format='json'
-            ).get_balance_sheet_quarterly(self.symbol)[0]
-        )
+        if self.freq == 'quarterly':
+            b_sheet = pd.DataFrame(
+                FundamentalData(
+                    key=BalanceSheet.AV_API_KEY, output_format='json'
+                ).get_balance_sheet_quarterly(self.symbol)[0]
+            )
+        elif self.freq == ('annual' or 'yearly'):
+            b_sheet = pd.DataFrame(
+                FundamentalData(
+                    key=BalanceSheet.AV_API_KEY, output_format='json'
+                ).get_balance_sheet_annual(self.symbol)[0]
+            )
+        else:
+            raise ValueError("'freq' attribute must be 'quarterly' "
+                             "or 'annual'")
 
+        b_sheet = b_sheet.iloc[:self.periods]
         b_sheet.rename(
             columns={
                 'fiscalDateEnding': 'Fisc Period End',
@@ -78,28 +89,113 @@ class BalanceSheet(Overview):
                 'intangibleAssets': 'Intang Asset',
                 'earningAssets': 'Earning Asset',
                 'otherCurrentAssets': 'Oth Curr Asset',
-                'totalLiabilities': 'Tot Liab',
-                'totalShareholderEquity': 'Tot SH EQ',
-                'deferredLongTermLiabilities': 'Defer LT Liab',
-                'otherCurrentLiabilities': 'Oth Curr Liab',
-                'otherNonCurrentLiabilities': 'Oth Non-curr Liab',
-                'totalNonCurrentLiabilities': 'Tot Non-curr Liab',
-                'negativeGoodwill': 'Neg Goodwill',
+                'totalLiabilities': 'Tot Lblts',
+                'totalShareholderEquity': 'Tot SH Eq',
+                'deferredLongTermLiabilities': 'Defer LT Lblts',
+                'otherCurrentLiabilities': 'Oth Curr Lblts',
+                'commonStock': 'Com Stock',
+                'retainedEarnings': 'Retain Earn',
+                'otherLiabilities': 'Oth Lblts',
+                'goodwill': 'GW',
+                'otherAssets': 'Oth Asset',
+                'cash': 'Cash',
+                'totalCurrentLiabilities': 'Tot Curr Lblts',
+                'shortTermDebt': 'ST Debt',
+                'currentLongTermDebt': 'Curr LT Debt',
+                'otherShareholderEquity': 'Oth SH Eq',
+                'propertyPlantEquipment': 'Prop/Plant/Equip',
+                'totalCurrentAssets': 'Tot Curr Asset',
+                'longTermInvestments': 'LT Invest',
+                'netTangibleAssets': 'Net Tang Asset',
+                'shortTermInvestments': 'ST Invest',
+                'netReceivables': 'Net Receivables',
+                'longTermDebt': 'LT Debt',
+                'inventory': 'Inventory',
+                'accountsPayable': 'Acct Payable',
+                'totalPermanentEquity': 'Tot Permanent Eq',
+                'additionalPaidInCapital': 'Addl Paid in Cap',
+                'commonStockTotalEquity': 'Com Stock Tot Eq',
+                'preferredStockTotalEquity': 'Pref Stock Tot Eq',
+                'retainedEarningsTotalEquity': 'Retain Earn Tot Eq',
+                'treasuryStock': 'Treasury Stock',
+                'accumulatedAmortization': 'Accum Amort',
+                'otherNonCurrrentAssets': 'Oth Non-curr Asset',
+                'deferredLongTermAssetCharges': 'Def LT Asset Chrg',
+                'totalNonCurrentAssets': 'Tot Non-curr Asset',
+                'capitalLeaseObligations': 'Cap Lease Obligation',
+                'totalLongTermDebt': 'Tot LT Debt',
+                'otherNonCurrentLiabilities': 'Oth Non-curr Lblts',
+                'totalNonCurrentLiabilities': 'Tot Non-curr Lblts',
+                'negativeGoodwill': 'Neg GW',
                 'warrants': 'Warrants',
                 'preferredStockRedeemable': 'Pref Stock Redeemable',
                 'capitalSurplus': 'Cap Surplus',
-                'liabilitiesAndShareholderEquity': 'Liab & SH EQ',
+                'liabilitiesAndShareholderEquity': 'Lblts & SH Eq',
                 'cashAndShortTermInvestments': 'Cash & ST Invest',
                 'accumulatedDepreciation': 'Accum Depreciation',
-                'commonStockSharesOutstanding': 'Common Shares Out'
+                'commonStockSharesOutstanding': 'Com Shares Outstanding'
             }, inplace=True
         )
         b_sheet.set_index('Fisc Period End',
                           drop=True,
                           append=False,
                           inplace=True)
-        b_sheet.drop(columns=['Reported Currency'])
+        b_sheet.drop(columns=['Reported Currency'], inplace=True)
+
+        b_sheet_index = pd.MultiIndex.from_frame(pd.DataFrame(
+            [
+                ['Assets', 'Cash & ST Invest' ,'Cash & Equiv'],
+                ['Assets', 'Cash & ST Invest', 'ST Invest'],
+                ['Assets', 'Cash & ST Invest', 'Cash & ST Invest'],
+
+            ]
+        ))
 
         return b_sheet
 
-
+'totalAssets': 'Tot Asset',
+'intangibleAssets': 'Intang Asset',
+'earningAssets': 'Earning Asset',
+'otherCurrentAssets': 'Oth Curr Asset',
+'totalLiabilities': 'Tot Lblts',
+'totalShareholderEquity': 'Tot SH Eq',
+'deferredLongTermLiabilities': 'Defer LT Lblts',
+'otherCurrentLiabilities': 'Oth Curr Lblts',
+'commonStock': 'Com Stock',
+'retainedEarnings': 'Retain Earn',
+'otherLiabilities': 'Oth Lblts',
+'goodwill': 'GW',
+'otherAssets': 'Oth Asset',
+'totalCurrentLiabilities': 'Tot Curr Lblts',
+'shortTermDebt': 'ST Debt',
+'currentLongTermDebt': 'Curr LT Debt',
+'otherShareholderEquity': 'Oth SH Eq',
+'propertyPlantEquipment': 'Prop/Plant/Equip',
+'totalCurrentAssets': 'Tot Curr Asset',
+'longTermInvestments': 'LT Invest',
+'netTangibleAssets': 'Net Tang Asset',
+'netReceivables': 'Net Receivables',
+'longTermDebt': 'LT Debt',
+'inventory': 'Inventory',
+'accountsPayable': 'Acct Payable',
+'totalPermanentEquity': 'Tot Permanent Eq',
+'additionalPaidInCapital': 'Addl Paid in Cap',
+'commonStockTotalEquity': 'Com Stock Tot Eq',
+'preferredStockTotalEquity': 'Pref Stock Tot Eq',
+'retainedEarningsTotalEquity': 'Retain Earn Tot Eq',
+'treasuryStock': 'Treasury Stock',
+'accumulatedAmortization': 'Accum Amort',
+'otherNonCurrrentAssets': 'Oth Non-curr Asset',
+'deferredLongTermAssetCharges': 'Def LT Asset Chrg',
+'totalNonCurrentAssets': 'Tot Non-curr Asset',
+'capitalLeaseObligations': 'Cap Lease Obligation',
+'totalLongTermDebt': 'Tot LT Debt',
+'otherNonCurrentLiabilities': 'Oth Non-curr Lblts',
+'totalNonCurrentLiabilities': 'Tot Non-curr Lblts',
+'negativeGoodwill': 'Neg GW',
+'warrants': 'Warrants',
+'preferredStockRedeemable': 'Pref Stock Redeemable',
+'capitalSurplus': 'Cap Surplus',
+'liabilitiesAndShareholderEquity': 'Lblts & SH Eq',
+'accumulatedDepreciation': 'Accum Depreciation',
+'commonStockSharesOutstanding': 'Com Shares Outstanding'
