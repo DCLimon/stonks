@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
 
+from equity import Stock
+
 _sp500_sectors = pd.read_csv(
     # from .csv, read in a Series where index is the symbols of all
     # constituents of S&P 500 index.
@@ -113,18 +115,19 @@ class GICS:
                 ].iloc[0]
 
 
-class IndustryComparison(GICS):
-    def __init__(self, sector, industry=None, subindustry=None):
-        super().__init__(sector, industry, subindustry)
+class PeerComparison(Stock, GICS):
+    def __init__(self, symbol, sector, industry=None, subindustry=None):
+        Stock.__init__(self, symbol)
+        GICS.__init__(sector, industry, subindustry)
 
     @property
-    def sector_partners(self):
+    def sector_peers(self):
         return _sp500_sectors.loc[
             _sp500_sectors['Sector'] == self.sector
         ].index
 
     @property
-    def industry_partners(self):
+    def industry_peers(self):
         if not self.industry:
             return None
         else:
@@ -133,7 +136,7 @@ class IndustryComparison(GICS):
             ].index
 
     @property
-    def subindustry_partners(self):
+    def subindustry_peers(self):
         if not self.subindustry:
             return None
         else:
