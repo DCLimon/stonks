@@ -6,6 +6,7 @@ from alpha_vantage.fundamentaldata import FundamentalData
 
 import industries
 from equity import Stock
+from industries import PeerComparison
 
 
 class Overview(Stock):
@@ -143,3 +144,12 @@ class BalanceSheet(Stock):
         b_sheet.drop(columns=['Reported Currency'], inplace=True)
 
         return b_sheet
+
+
+class Ratios(Overview, PeerComparison):
+
+    def __init__(self, symbol, sector, industry=None, subindustry=None):
+        Overview.__init__(self, symbol)
+        PeerComparison.__init__(
+            self, symbol, sector, industry=None, subindustry=None
+        )
