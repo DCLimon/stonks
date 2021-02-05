@@ -86,55 +86,61 @@ class BalanceSheet(Stock):
             columns={
                 'fiscalDateEnding': 'Fisc Period End',
                 'reportedCurrency': 'Reported Currency',
-                'totalAssets': 'Tot Asset',
-                'intangibleAssets': 'Intang Asset',
-                'earningAssets': 'Earning Asset',
-                'otherCurrentAssets': 'Oth Curr Asset',
-                'totalLiabilities': 'Tot Lblts',
-                'totalShareholderEquity': 'Tot SH Eq',
-                'deferredLongTermLiabilities': 'Defer LT Lblts',
-                'otherCurrentLiabilities': 'Oth Curr Lblts',
-                'commonStock': 'Com Stock',
-                'retainedEarnings': 'Retain Earn',
-                'otherLiabilities': 'Oth Lblts',
-                'goodwill': 'GW',
-                'otherAssets': 'Oth Asset',
+                # ST Assets:
                 'cash': 'Cash',
-                'totalCurrentLiabilities': 'Tot Curr Lblts',
+                'shortTermInvestments': 'ST Invest',
+                'cashAndShortTermInvestments': 'Cash & ST Invest',
+                'netReceivables': 'Net Receivables',
+                'inventory': 'Inventory',
+                'otherCurrentAssets': 'Oth Curr Asset',
+                'totalCurrentAssets': 'Tot Curr Asset',
+                # LT Assets:
+                'accumulatedDepreciation': 'Accum Depreciation',
+                'propertyPlantEquipment': 'PP&E',
+                'goodwill': 'GW',
+                'accumulatedAmortization': 'Accum Amort',
+                'intangibleAssets': 'Intang Asset',
+                'longTermInvestments': 'LT Invest',
+                'otherNonCurrrentAssets': 'Oth Non-curr Asset',
+                'totalNonCurrentAssets': 'Tot Non-curr Asset',
+                'totalAssets': 'Tot Asset',
+                # ST Lblts:
+                'accountsPayable': 'Acct Payable',
                 'shortTermDebt': 'ST Debt',
                 'currentLongTermDebt': 'Curr LT Debt',
-                'otherShareholderEquity': 'Oth SH Eq',
-                'propertyPlantEquipment': 'Prop/Plant/Equip',
-                'totalCurrentAssets': 'Tot Curr Asset',
-                'longTermInvestments': 'LT Invest',
-                'netTangibleAssets': 'Net Tang Asset',
-                'shortTermInvestments': 'ST Invest',
-                'netReceivables': 'Net Receivables',
+                'otherCurrentLiabilities': 'Oth Curr Lblts',
+                'totalCurrentLiabilities': 'Tot Curr Lblts',
+                # LT Lblts
                 'longTermDebt': 'LT Debt',
-                'inventory': 'Inventory',
-                'accountsPayable': 'Acct Payable',
-                'totalPermanentEquity': 'Tot Permanent Eq',
-                'additionalPaidInCapital': 'Addl Paid in Cap',
-                'commonStockTotalEquity': 'Com Stock Tot Eq',
-                'preferredStockTotalEquity': 'Pref Stock Tot Eq',
-                'retainedEarningsTotalEquity': 'Retain Earn Tot Eq',
-                'treasuryStock': 'Treasury Stock',
-                'accumulatedAmortization': 'Accum Amort',
-                'otherNonCurrrentAssets': 'Oth Non-curr Asset',
-                'deferredLongTermAssetCharges': 'Def LT Asset Chrg',
-                'totalNonCurrentAssets': 'Tot Non-curr Asset',
-                'capitalLeaseObligations': 'Cap Lease Obligation',
                 'totalLongTermDebt': 'Tot LT Debt',
+                'deferredLongTermLiabilities': 'Defer LT Lblts',
                 'otherNonCurrentLiabilities': 'Oth Non-curr Lblts',
                 'totalNonCurrentLiabilities': 'Tot Non-curr Lblts',
+                'otherLiabilities': 'Oth Lblts',
+                'totalLiabilities': 'Tot Lblts',
+                # SH Equity:
+                'commonStock': 'Com Stock',
+                'additionalPaidInCapital': 'Addl Paid in Cap',
+                'commonStockTotalEquity': 'Com Stock Tot Eq',
+                'retainedEarnings': 'Retain Earn',
+                'treasuryStock': 'Treasury Stock',
+                'otherShareholderEquity': 'Oth SH Eq',
+                'totalShareholderEquity': 'Tot SH Eq',
+                'liabilitiesAndShareholderEquity': 'Lblts & SH Eq',
+                'commonStockSharesOutstanding': 'Com Shares Out',
+                # Not yet organized:
+                'earningAssets': 'Earning Asset',
+                'otherAssets': 'Oth Asset',
+                'netTangibleAssets': 'Net Tang Asset',
+                'totalPermanentEquity': 'Tot Permanent Eq',
+                'preferredStockTotalEquity': 'Pref Stock Tot Eq',
+                'retainedEarningsTotalEquity': 'Retain Earn Tot Eq',
+                'deferredLongTermAssetCharges': 'Def LT Asset Chrg',
+                'capitalLeaseObligations': 'Cap Lease Obligation',
                 'negativeGoodwill': 'Neg GW',
                 'warrants': 'Warrants',
                 'preferredStockRedeemable': 'Pref Stock Redeemable',
                 'capitalSurplus': 'Cap Surplus',
-                'liabilitiesAndShareholderEquity': 'Lblts & SH Eq',
-                'cashAndShortTermInvestments': 'Cash & ST Invest',
-                'accumulatedDepreciation': 'Accum Depreciation',
-                'commonStockSharesOutstanding': 'Com Shares Outstanding'
             }, inplace=True
         )
         b_sheet.set_index('Fisc Period End',
@@ -153,3 +159,31 @@ class Ratios(Overview, PeerComparison):
         PeerComparison.__init__(
             self, symbol, sector, industry=None, subindustry=None
         )
+
+    def vs_peers(self, peer_level, *ratios):
+        if peer_level == 'Sector':
+            peer_list = self.sector_peers
+        elif peer_level == 'Industry':
+            peer_list = self.industry_peers
+        elif peer_level == 'Sub-Industry':
+            peer_list = self.subindustry_peers
+
+        peer_df = pd.DataFrame(
+            index=peer_list,
+            columns=ratios
+        )
+
+        for peer in peer_list:
+            ov = Overview(peer).overview
+            ratio_dict = {}
+
+            for ratio in ratios:
+                ratio_dict[ratio] = ov[ratio]
+            peer_series = pd.Series(ratio_dict, name=peer)
+            peer_df.append(peer_series)
+
+        ratio_series = pd.Series(
+            [peer_df[ratio].mean for ratio in ratios],
+            name=f"{self.symbol} Peers"
+        )
+        return ratio_series
