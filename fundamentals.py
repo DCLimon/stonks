@@ -5,13 +5,14 @@ from alpha_vantage.timeseries import TimeSeries
 from alpha_vantage.fundamentaldata import FundamentalData
 
 import industries
-from equity import Stock
 from industries import PeerComparison
 
 
-class Overview(Stock):
+class Overview:
+    AV_API_KEY = 'AIDD24S6AW4MOOHG'
+
     def __init__(self, symbol):
-        super().__init__(symbol)
+        self.symbol = symbol
 
     @property
     def overview(self):
@@ -57,9 +58,11 @@ class Overview(Stock):
         return ov_data_series
 
 
-class BalanceSheet(Stock):
+class BalanceSheet:
+    AV_API_KEY = 'AIDD24S6AW4MOOHG'
+
     def __init__(self, symbol, freq='quarterly', periods=5):
-        super().__init__(symbol)
+        self.symbol = symbol
         self.freq = freq
         self.periods = periods
 
@@ -152,13 +155,10 @@ class BalanceSheet(Stock):
         return b_sheet
 
 
-class Ratios(Overview, PeerComparison):
+class Ratios(PeerComparison):
 
     def __init__(self, symbol, sector, industry=None, subindustry=None):
-        Overview.__init__(self, symbol)
-        PeerComparison.__init__(
-            self, symbol, sector, industry=None, subindustry=None
-        )
+        super().__init__(symbol, sector, industry, subindustry)
 
     def vs_peers(self, peer_level, *ratios):
         if peer_level == 'Sector':
@@ -179,6 +179,7 @@ class Ratios(Overview, PeerComparison):
 
             for ratio in ratios:
                 ratio_dict[ratio] = ov[ratio]
+
             peer_series = pd.Series(ratio_dict, name=peer)
             peer_df.append(peer_series)
 
