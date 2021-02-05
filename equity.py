@@ -17,9 +17,9 @@ class Stock:
     def __init__(self, symbol):
         self.symbol = symbol
 
-    def classify(self, sector, industry=None, subindustry=None):
-        gics = industries.GICS(sector, industry, subindustry)
-        return gics
+    # def classify(self, sector, industry=None, subindustry=None):
+    #     gics = industries.GICS(sector, industry, subindustry)
+    #     return gics
 
 
     # @property
