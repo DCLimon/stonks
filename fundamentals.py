@@ -54,6 +54,8 @@ class Overview:
             'Ex-Div Date', 'Last Split Factor', 'Last Split Date'
         ]
         ov_data_series.name = self.symbol
+        ov_data_series[ov_data_series == 'None'] = np.nan
+        ov_data_series.astype('float64')
 
         return ov_data_series
 
@@ -169,7 +171,6 @@ class Ratios(PeerComparison):
             peer_list = self.subindustry_peers
 
         peer_df = pd.DataFrame(
-            index=peer_list,
             columns=ratios
         )
 
@@ -181,10 +182,17 @@ class Ratios(PeerComparison):
                 ratio_dict[ratio] = ov[ratio]
 
             peer_series = pd.Series(ratio_dict, name=peer)
-            peer_df.append(peer_series)
+            peer_df = peer_df.append(peer_series)
+            print(peer_series)
 
-        ratio_series = pd.Series(
-            [peer_df[ratio].mean for ratio in ratios],
-            name=f"{self.symbol} Peers"
-        )
-        return ratio_series
+        # print(peer_df)
+        # ratio_series = pd.Series(
+        #     [peer_df[ratio].mean() for ratio in ratios],
+        #     name=f"{self.symbol} Peers"
+        # )
+        return peer_df
+
+
+xom_ratios = Ratios('XOM', 'Energy', 'Oil, Gas & Consumable Fuels',
+                    'Integrated Oil & Gas')
+op = xom_ratios.vs_peers('Sub-Industry', 'P/E', 'P/B', 'TTM ROE')
