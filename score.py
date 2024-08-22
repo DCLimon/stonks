@@ -5,6 +5,5 @@ class StockScore(Stock):
     pass
 
 
-
 class FinancialScore:
     pass

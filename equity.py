@@ -23,7 +23,7 @@ def read_api_keys(file):
 
 class Stock:
 
-    AV_API_KEY = read_api_keys('api_keys.txt')['alphavantage']
+    AV_API_KEY = read_api_keys('api_keys.txt')['alpha_vantage']
 
     def __init__(self, symbol):
         self.symbol = symbol

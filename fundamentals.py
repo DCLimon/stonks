@@ -20,7 +20,7 @@ def read_api_keys(file):
 
 
 class Overview:
-    AV_API_KEY = read_api_keys('api_keys.txt')['alphavantage']
+    AV_API_KEY = read_api_keys('api_keys.txt')['alpha_vantage']
 
     def __init__(self, symbol):
         self.symbol = symbol
@@ -72,14 +72,13 @@ class Overview:
 
 
 class BalanceSheet:
-    AV_API_KEY = 'AIDD24S6AW4MOOHG'
+    AV_API_KEY = read_api_keys('api_keys.txt')['alpha_vantage']
 
     def __init__(self, symbol, freq='quarterly', periods=5):
         self.symbol = symbol
         self.freq = freq
         self.periods = periods
 
-    @property
     def balance_sheet(self):
         if self.freq == 'quarterly':
             b_sheet = pd.DataFrame(
@@ -98,72 +97,68 @@ class BalanceSheet:
                              "or 'annual'")
 
         b_sheet = b_sheet.iloc[:self.periods]
-        b_sheet.rename(
+        b_sheet = b_sheet.rename(
             columns={
-                'fiscalDateEnding': 'Fisc Period End',
-                'reportedCurrency': 'Reported Currency',
+                'fiscalDateEnding': 'fy_end',
+                'reportedCurrency': 'report_currency',
                 # ST Assets:
-                'cash': 'Cash',
-                'shortTermInvestments': 'ST Invest',
-                'cashAndShortTermInvestments': 'Cash & ST Invest',
-                'netReceivables': 'Net Receivables',
-                'inventory': 'Inventory',
-                'otherCurrentAssets': 'Oth Curr Asset',
-                'totalCurrentAssets': 'Tot Curr Asset',
+                'shortTermInvestments': 'st_invest',
+                'cashAndShortTermInvestments': 'cash_st_invest',
+                'netReceivables': 'ar_net',
+                'otherCurrentAssets': 'oth_curr_asset',
+                'totalCurrentAssets': 'tot_curr_asset',
                 # LT Assets:
-                'accumulatedDepreciation': 'Accum Depreciation',
-                'propertyPlantEquipment': 'PP&E',
-                'goodwill': 'GW',
-                'accumulatedAmortization': 'Accum Amort',
-                'intangibleAssets': 'Intang Asset',
-                'longTermInvestments': 'LT Invest',
-                'otherNonCurrrentAssets': 'Oth Non-curr Asset',
-                'totalNonCurrentAssets': 'Tot Non-curr Asset',
-                'totalAssets': 'Tot Asset',
+                'accumulatedDepreciation': 'accum_deprec',
+                'propertyPlantEquipment': 'ppe',
+                'goodwill': 'gw',
+                'accumulatedAmortization': 'accum_amort',
+                'intangibleAssets': 'intang_asset',
+                'longTermInvestments': 'lt_invest',
+                'otherNonCurrrentAssets': 'oth_noncurr_asset',
+                'totalNonCurrentAssets': 'oth_noncurr_asset',
+                'totalAssets': 'tot_asset',
                 # ST Lblts:
-                'accountsPayable': 'Acct Payable',
-                'shortTermDebt': 'ST Debt',
-                'currentLongTermDebt': 'Curr LT Debt',
-                'otherCurrentLiabilities': 'Oth Curr Lblts',
-                'totalCurrentLiabilities': 'Tot Curr Lblts',
+                'accountsPayable': 'ap',
+                'shortTermDebt': 'st_debt',
+                'currentLongTermDebt': 'curr_lt_debt',
+                'otherCurrentLiabilities': 'oth_curr_lblt',
+                'totalCurrentLiabilities': 'tot_curr_lblt',
                 # LT Lblts
-                'longTermDebt': 'LT Debt',
-                'totalLongTermDebt': 'Tot LT Debt',
-                'deferredLongTermLiabilities': 'Defer LT Lblts',
-                'otherNonCurrentLiabilities': 'Oth Non-curr Lblts',
-                'totalNonCurrentLiabilities': 'Tot Non-curr Lblts',
-                'otherLiabilities': 'Oth Lblts',
-                'totalLiabilities': 'Tot Lblts',
+                'longTermDebt': 'lt_debt',
+                'totalLongTermDebt': 'tot_lt_debt',
+                'deferredLongTermLiabilities': 'def_lt_lblt',
+                'otherNonCurrentLiabilities': 'oth_noncurr_lblt',
+                'totalNonCurrentLiabilities': 'tot_noncurr_lblt',
+                'otherLiabilities': 'oth_blt',
+                'totalLiabilities': 'tot_lblt',
                 # SH Equity:
-                'commonStock': 'Com Stock',
-                'additionalPaidInCapital': 'Addl Paid in Cap',
-                'commonStockTotalEquity': 'Com Stock Tot Eq',
-                'retainedEarnings': 'Retain Earn',
-                'treasuryStock': 'Treasury Stock',
-                'otherShareholderEquity': 'Oth SH Eq',
-                'totalShareholderEquity': 'Tot SH Eq',
-                'liabilitiesAndShareholderEquity': 'Lblts & SH Eq',
-                'commonStockSharesOutstanding': 'Com Shares Out',
+                'commonStock': 'comm_stock',
+                'additionalPaidInCapital': 'apic',
+                'commonStockTotalEquity': 'comm_stock_tot_eq',
+                'retainedEarnings': 'ret_earn',
+                'treasuryStock': 'treasury_stock',
+                'otherShareholderEquity': 'oth_SH_eq',
+                'totalShareholderEquity': 'tot_SH_eq',
+                'liabilitiesAndShareholderEquity': 'lblt_SH_eq',
+                'commonStockSharesOutstanding': 'comm_shares_out',
                 # Not yet organized:
-                'earningAssets': 'Earning Asset',
-                'otherAssets': 'Oth Asset',
-                'netTangibleAssets': 'Net Tang Asset',
-                'totalPermanentEquity': 'Tot Permanent Eq',
-                'preferredStockTotalEquity': 'Pref Stock Tot Eq',
-                'retainedEarningsTotalEquity': 'Retain Earn Tot Eq',
-                'deferredLongTermAssetCharges': 'Def LT Asset Chrg',
-                'capitalLeaseObligations': 'Cap Lease Obligation',
-                'negativeGoodwill': 'Neg GW',
-                'warrants': 'Warrants',
-                'preferredStockRedeemable': 'Pref Stock Redeemable',
-                'capitalSurplus': 'Cap Surplus',
-            }, inplace=True
+                'earningAssets': 'earning_asset',
+                'otherAssets': 'oth_asset',
+                'netTangibleAssets': 'net_tang_asset',
+                'totalPermanentEquity': 'tot_perm_eq',
+                'preferredStockTotalEquity': 'pref_stock_tot_eq',
+                'retainedEarningsTotalEquity': 'ret_earn_tot_eq',
+                'deferredLongTermAssetCharges': 'def_LT_asset_charge',
+                'capitalLeaseObligations': 'cap_lease_obligation',
+                'negativeGoodwill': 'neg_gw',
+                'preferredStockRedeemable': 'pref_stock_redeemable',
+                'capitalSurplus': 'cap_surplus',
+            }
         )
-        b_sheet.set_index('Fisc Period End',
+        b_sheet = b_sheet.set_index('Fisc Period End',
                           drop=True,
-                          append=False,
-                          inplace=True)
-        b_sheet.drop(columns=['Reported Currency'], inplace=True)
+                          append=False)
+        b_sheet = b_sheet.drop(columns=['Reported Currency'])
 
         return b_sheet
 
