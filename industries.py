@@ -103,28 +103,29 @@ class GICS:
         else:
             self._subindustry = value
 
-            if not self.industry:
-                # If subindustry but not industry argument is specified,
-                # find & set proper industry attribute value.
-                self.industry = GICS._industry_struc.loc[
-                    GICS._industry_struc[
-                        'Sub-Industry'
-                    ] == self.subindustry, 'Industry'
-                ].iloc[0]
+        if not self.industry:
+            # If subindustry but not industry argument is specified,
+            # find & set proper industry attribute value.
+            self.industry = GICS._industry_struc.loc[
+                GICS._industry_struc[
+                    'Sub-Industry'
+                ] == self.subindustry, 'Industry'
+            ].iloc[0]
 
 
-class IndustryComparison(GICS):
-    def __init__(self, sector, industry=None, subindustry=None):
+class PeerComparison(GICS):
+    def __init__(self, symbol, sector, industry=None, subindustry=None):
         super().__init__(sector, industry, subindustry)
+        self.symbol = symbol
 
     @property
-    def sector_partners(self):
+    def sector_peers(self):
         return _sp500_sectors.loc[
             _sp500_sectors['Sector'] == self.sector
         ].index
 
     @property
-    def industry_partners(self):
+    def industry_peers(self):
         if not self.industry:
             return None
         else:
@@ -133,7 +134,7 @@ class IndustryComparison(GICS):
             ].index
 
     @property
-    def subindustry_partners(self):
+    def subindustry_peers(self):
         if not self.subindustry:
             return None
         else:

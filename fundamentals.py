@@ -5,13 +5,14 @@ from alpha_vantage.timeseries import TimeSeries
 from alpha_vantage.fundamentaldata import FundamentalData
 
 import industries
-from equity import Stock
+from industries import PeerComparison
 
 
-class Overview(Stock):
-    def __init__(self, symbol, equity_type):
-        super().__init__(symbol, equity_type)
-        self.equity_type = 'Stock'
+class Overview:
+    AV_API_KEY = 'AIDD24S6AW4MOOHG'
+
+    def __init__(self, symbol):
+        self.symbol = symbol
 
     @property
     def overview(self):
@@ -53,53 +54,145 @@ class Overview(Stock):
             'Ex-Div Date', 'Last Split Factor', 'Last Split Date'
         ]
         ov_data_series.name = self.symbol
+        ov_data_series[ov_data_series == 'None'] = np.nan
+        ov_data_series.astype('float64')
 
         return ov_data_series
 
 
-class BalanceSheet(Overview):
-    def __init__(self, symbol, equity_type='Stock'):
-        super().__init__(symbol, equity_type)
-        self.equity_type = 'Stock'
+class BalanceSheet:
+    AV_API_KEY = 'AIDD24S6AW4MOOHG'
+
+    def __init__(self, symbol, freq='quarterly', periods=5):
+        self.symbol = symbol
+        self.freq = freq
+        self.periods = periods
 
     @property
     def balance_sheet(self):
-        b_sheet = pd.DataFrame(
-            FundamentalData(
-                key=Overview.AV_API_KEY, output_format='json'
-            ).get_balance_sheet_quarterly(self.symbol)[0]
-        )
+        if self.freq == 'quarterly':
+            b_sheet = pd.DataFrame(
+                FundamentalData(
+                    key=BalanceSheet.AV_API_KEY, output_format='json'
+                ).get_balance_sheet_quarterly(self.symbol)[0]
+            )
+        elif self.freq == ('annual' or 'yearly'):
+            b_sheet = pd.DataFrame(
+                FundamentalData(
+                    key=BalanceSheet.AV_API_KEY, output_format='json'
+                ).get_balance_sheet_annual(self.symbol)[0]
+            )
+        else:
+            raise ValueError("'freq' attribute must be 'quarterly' "
+                             "or 'annual'")
 
+        b_sheet = b_sheet.iloc[:self.periods]
         b_sheet.rename(
             columns={
                 'fiscalDateEnding': 'Fisc Period End',
                 'reportedCurrency': 'Reported Currency',
-                'totalAssets': 'Tot Asset',
-                'intangibleAssets': 'Intang Asset',
-                'earningAssets': 'Earning Asset',
+                # ST Assets:
+                'cash': 'Cash',
+                'shortTermInvestments': 'ST Invest',
+                'cashAndShortTermInvestments': 'Cash & ST Invest',
+                'netReceivables': 'Net Receivables',
+                'inventory': 'Inventory',
                 'otherCurrentAssets': 'Oth Curr Asset',
-                'totalLiabilities': 'Tot Liab',
-                'totalShareholderEquity': 'Tot SH EQ',
-                'deferredLongTermLiabilities': 'Defer LT Liab',
-                'otherCurrentLiabilities': 'Oth Curr Liab',
-                'otherNonCurrentLiabilities': 'Oth Non-curr Liab',
-                'totalNonCurrentLiabilities': 'Tot Non-curr Liab',
-                'negativeGoodwill': 'Neg Goodwill',
+                'totalCurrentAssets': 'Tot Curr Asset',
+                # LT Assets:
+                'accumulatedDepreciation': 'Accum Depreciation',
+                'propertyPlantEquipment': 'PP&E',
+                'goodwill': 'GW',
+                'accumulatedAmortization': 'Accum Amort',
+                'intangibleAssets': 'Intang Asset',
+                'longTermInvestments': 'LT Invest',
+                'otherNonCurrrentAssets': 'Oth Non-curr Asset',
+                'totalNonCurrentAssets': 'Tot Non-curr Asset',
+                'totalAssets': 'Tot Asset',
+                # ST Lblts:
+                'accountsPayable': 'Acct Payable',
+                'shortTermDebt': 'ST Debt',
+                'currentLongTermDebt': 'Curr LT Debt',
+                'otherCurrentLiabilities': 'Oth Curr Lblts',
+                'totalCurrentLiabilities': 'Tot Curr Lblts',
+                # LT Lblts
+                'longTermDebt': 'LT Debt',
+                'totalLongTermDebt': 'Tot LT Debt',
+                'deferredLongTermLiabilities': 'Defer LT Lblts',
+                'otherNonCurrentLiabilities': 'Oth Non-curr Lblts',
+                'totalNonCurrentLiabilities': 'Tot Non-curr Lblts',
+                'otherLiabilities': 'Oth Lblts',
+                'totalLiabilities': 'Tot Lblts',
+                # SH Equity:
+                'commonStock': 'Com Stock',
+                'additionalPaidInCapital': 'Addl Paid in Cap',
+                'commonStockTotalEquity': 'Com Stock Tot Eq',
+                'retainedEarnings': 'Retain Earn',
+                'treasuryStock': 'Treasury Stock',
+                'otherShareholderEquity': 'Oth SH Eq',
+                'totalShareholderEquity': 'Tot SH Eq',
+                'liabilitiesAndShareholderEquity': 'Lblts & SH Eq',
+                'commonStockSharesOutstanding': 'Com Shares Out',
+                # Not yet organized:
+                'earningAssets': 'Earning Asset',
+                'otherAssets': 'Oth Asset',
+                'netTangibleAssets': 'Net Tang Asset',
+                'totalPermanentEquity': 'Tot Permanent Eq',
+                'preferredStockTotalEquity': 'Pref Stock Tot Eq',
+                'retainedEarningsTotalEquity': 'Retain Earn Tot Eq',
+                'deferredLongTermAssetCharges': 'Def LT Asset Chrg',
+                'capitalLeaseObligations': 'Cap Lease Obligation',
+                'negativeGoodwill': 'Neg GW',
                 'warrants': 'Warrants',
                 'preferredStockRedeemable': 'Pref Stock Redeemable',
                 'capitalSurplus': 'Cap Surplus',
-                'liabilitiesAndShareholderEquity': 'Liab & SH EQ',
-                'cashAndShortTermInvestments': 'Cash & ST Invest',
-                'accumulatedDepreciation': 'Accum Depreciation',
-                'commonStockSharesOutstanding': 'Common Shares Out'
             }, inplace=True
         )
         b_sheet.set_index('Fisc Period End',
                           drop=True,
                           append=False,
                           inplace=True)
-        b_sheet.drop(columns=['Reported Currency'])
+        b_sheet.drop(columns=['Reported Currency'], inplace=True)
 
         return b_sheet
 
 
+class Ratios(PeerComparison):
+
+    def __init__(self, symbol, sector, industry=None, subindustry=None):
+        super().__init__(symbol, sector, industry, subindustry)
+
+    def vs_peers(self, peer_level, *ratios):
+        if peer_level == 'Sector':
+            peer_list = self.sector_peers
+        elif peer_level == 'Industry':
+            peer_list = self.industry_peers
+        elif peer_level == 'Sub-Industry':
+            peer_list = self.subindustry_peers
+
+        peer_df = pd.DataFrame(
+            columns=ratios
+        )
+
+        for peer in peer_list:
+            ov = Overview(peer).overview
+            ratio_dict = {}
+
+            for ratio in ratios:
+                ratio_dict[ratio] = ov[ratio]
+
+            peer_series = pd.Series(ratio_dict, name=peer)
+            peer_df = peer_df.append(peer_series)
+            print(peer_series)
+
+        # print(peer_df)
+        # ratio_series = pd.Series(
+        #     [peer_df[ratio].mean() for ratio in ratios],
+        #     name=f"{self.symbol} Peers"
+        # )
+        return peer_df
+
+
+xom_ratios = Ratios('XOM', 'Energy', 'Oil, Gas & Consumable Fuels',
+                    'Integrated Oil & Gas')
+op = xom_ratios.vs_peers('Sub-Industry', 'P/E', 'P/B', 'TTM ROE')
