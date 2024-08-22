@@ -1,0 +1,565 @@
+Symbol,Sector,Industry Group,Industry,Sub-Industry
+IPG,Communication Services,Media & Entertainment,Media,Advertising
+OMC,Communication Services,Media & Entertainment,Media,Advertising
+LUMN,Communication Services,Telecommunication Services,Diversified Telecommunication Services,Alternative Carriers
+DISCA,Communication Services,Media & Entertainment,Media,Broadcasting
+DISCK,Communication Services,Media & Entertainment,Media,Broadcasting
+CHTR,Communication Services,Media & Entertainment,Media,Cable & Satellite
+CMCSA,Communication Services,Media & Entertainment,Media,Cable & Satellite
+DISH,Communication Services,Media & Entertainment,Media,Cable & Satellite
+T,Communication Services,Telecommunication Services,Diversified Telecommunication Services,Integrated Telecommunication Services
+VZ,Communication Services,Telecommunication Services,Diversified Telecommunication Services,Integrated Telecommunication Services
+ATVI,Communication Services,Media & Entertainment,Entertainment,Interactive Home Entertainment
+EA,Communication Services,Media & Entertainment,Entertainment,Interactive Home Entertainment
+TTWO,Communication Services,Media & Entertainment,Entertainment,Interactive Home Entertainment
+GOOGL,Communication Services,Media & Entertainment,Interactive Media & Services,Interactive Media & Services
+GOOG,Communication Services,Media & Entertainment,Interactive Media & Services,Interactive Media & Services
+FB,Communication Services,Media & Entertainment,Interactive Media & Services,Interactive Media & Services
+TWTR,Communication Services,Media & Entertainment,Interactive Media & Services,Interactive Media & Services
+FOXA,Communication Services,Media & Entertainment,Entertainment,Movies & Entertainment
+FOX,Communication Services,Media & Entertainment,Entertainment,Movies & Entertainment
+LYV,Communication Services,Media & Entertainment,Entertainment,Movies & Entertainment
+NFLX,Communication Services,Media & Entertainment,Entertainment,Movies & Entertainment
+VIAC,Communication Services,Media & Entertainment,Entertainment,Movies & Entertainment
+DIS,Communication Services,Media & Entertainment,Entertainment,Movies & Entertainment
+NWSA,Communication Services,Media & Entertainment,Media,Publishing
+NWS,Communication Services,Media & Entertainment,Media,Publishing
+TMUS,Communication Services,Telecommunication Services,Wireless Telecommunication Services,Wireless Telecommunication Services
+GPS,Consumer Discretionary,Retailing,Specialty Retail,Apparel Retail
+LB,Consumer Discretionary,Retailing,Specialty Retail,Apparel Retail
+ROST,Consumer Discretionary,Retailing,Specialty Retail,Apparel Retail
+TJX,Consumer Discretionary,Retailing,Specialty Retail,Apparel Retail
+HBI,Consumer Discretionary,Consumer Durables & Apparel,"Textiles, Apparel & Luxury Goods","Apparel, Accessories & Luxury Goods"
+NKE,Consumer Discretionary,Consumer Durables & Apparel,"Textiles, Apparel & Luxury Goods","Apparel, Accessories & Luxury Goods"
+PVH,Consumer Discretionary,Consumer Durables & Apparel,"Textiles, Apparel & Luxury Goods","Apparel, Accessories & Luxury Goods"
+RL,Consumer Discretionary,Consumer Durables & Apparel,"Textiles, Apparel & Luxury Goods","Apparel, Accessories & Luxury Goods"
+TPR,Consumer Discretionary,Consumer Durables & Apparel,"Textiles, Apparel & Luxury Goods","Apparel, Accessories & Luxury Goods"
+UAA,Consumer Discretionary,Consumer Durables & Apparel,"Textiles, Apparel & Luxury Goods","Apparel, Accessories & Luxury Goods"
+UA,Consumer Discretionary,Consumer Durables & Apparel,"Textiles, Apparel & Luxury Goods","Apparel, Accessories & Luxury Goods"
+VFC,Consumer Discretionary,Consumer Durables & Apparel,"Textiles, Apparel & Luxury Goods","Apparel, Accessories & Luxury Goods"
+APTV,Consumer Discretionary,Automobiles & Components,Auto Components,Auto Parts & Equipment
+BWA,Consumer Discretionary,Automobiles & Components,Auto Components,Auto Parts & Equipment
+F,Consumer Discretionary,Automobiles & Components,Automobiles,Automobile Manufacturers
+GM,Consumer Discretionary,Automobiles & Components,Automobiles,Automobile Manufacturers
+TSLA,Consumer Discretionary,Automobiles & Components,Automobiles,Automobile Manufacturers
+AAP,Consumer Discretionary,Retailing,Specialty Retail,Automotive Retail
+LVS,Consumer Discretionary,Consumer Services,"Hotels, Restaurants & Leisure",Casinos & Gaming
+MGM,Consumer Discretionary,Consumer Services,"Hotels, Restaurants & Leisure",Casinos & Gaming
+WYNN,Consumer Discretionary,Consumer Services,"Hotels, Restaurants & Leisure",Casinos & Gaming
+BBY,Consumer Discretionary,Retailing,Specialty Retail,Computer & Electronics Retail
+GRMN,Consumer Discretionary,Consumer Durables & Apparel,Household Durables,Consumer Electronics
+LKQ,Consumer Discretionary,Retailing,Distributors,Distributors
+POOL,Consumer Discretionary,Retailing,Distributors,Distributors
+DG,Consumer Discretionary,Retailing,Multiline Retail,General Merchandise Stores
+DLTR,Consumer Discretionary,Retailing,Multiline Retail,General Merchandise Stores
+TGT,Consumer Discretionary,Retailing,Multiline Retail,General Merchandise Stores
+LEG,Consumer Discretionary,Consumer Durables & Apparel,Household Durables,Home Furnishings
+MHK,Consumer Discretionary,Consumer Durables & Apparel,Household Durables,Home Furnishings
+HD,Consumer Discretionary,Retailing,Specialty Retail,Home Improvement Retail
+LOW,Consumer Discretionary,Retailing,Specialty Retail,Home Improvement Retail
+DHI,Consumer Discretionary,Consumer Durables & Apparel,Household Durables,Homebuilding
+LEN,Consumer Discretionary,Consumer Durables & Apparel,Household Durables,Homebuilding
+NVR,Consumer Discretionary,Consumer Durables & Apparel,Household Durables,Homebuilding
+PHM,Consumer Discretionary,Consumer Durables & Apparel,Household Durables,Homebuilding
+CCL,Consumer Discretionary,Consumer Services,"Hotels, Restaurants & Leisure","Hotels, Resorts & Cruise Lines"
+HLT,Consumer Discretionary,Consumer Services,"Hotels, Restaurants & Leisure","Hotels, Resorts & Cruise Lines"
+MAR,Consumer Discretionary,Consumer Services,"Hotels, Restaurants & Leisure","Hotels, Resorts & Cruise Lines"
+NCLH,Consumer Discretionary,Consumer Services,"Hotels, Restaurants & Leisure","Hotels, Resorts & Cruise Lines"
+RCL,Consumer Discretionary,Consumer Services,"Hotels, Restaurants & Leisure","Hotels, Resorts & Cruise Lines"
+WHR,Consumer Discretionary,Consumer Durables & Apparel,Household Durables,Household Appliances
+NWL,Consumer Discretionary,Consumer Durables & Apparel,Household Durables,Housewares & Specialties
+AMZN,Consumer Discretionary,Retailing,Internet & Direct Marketing Retail,Internet & Direct Marketing Retail
+BKNG,Consumer Discretionary,Retailing,Internet & Direct Marketing Retail,Internet & Direct Marketing Retail
+EBAY,Consumer Discretionary,Retailing,Internet & Direct Marketing Retail,Internet & Direct Marketing Retail
+ETSY,Consumer Discretionary,Retailing,Internet & Direct Marketing Retail,Internet & Direct Marketing Retail
+EXPE,Consumer Discretionary,Retailing,Internet & Direct Marketing Retail,Internet & Direct Marketing Retail
+HAS,Consumer Discretionary,Consumer Durables & Apparel,Leisure Products,Leisure Products
+CMG,Consumer Discretionary,Consumer Services,"Hotels, Restaurants & Leisure",Restaurants
+DRI,Consumer Discretionary,Consumer Services,"Hotels, Restaurants & Leisure",Restaurants
+DPZ,Consumer Discretionary,Consumer Services,"Hotels, Restaurants & Leisure",Restaurants
+MCD,Consumer Discretionary,Consumer Services,"Hotels, Restaurants & Leisure",Restaurants
+SBUX,Consumer Discretionary,Consumer Services,"Hotels, Restaurants & Leisure",Restaurants
+YUM,Consumer Discretionary,Consumer Services,"Hotels, Restaurants & Leisure",Restaurants
+AZO,Consumer Discretionary,Retailing,Specialty Retail,Specialty Stores
+KMX,Consumer Discretionary,Retailing,Specialty Retail,Specialty Stores
+GPC,Consumer Discretionary,Retailing,Specialty Retail,Specialty Stores
+ORLY,Consumer Discretionary,Retailing,Specialty Retail,Specialty Stores
+TSCO,Consumer Discretionary,Retailing,Specialty Retail,Specialty Stores
+ULTA,Consumer Discretionary,Retailing,Specialty Retail,Specialty Stores
+ADM,Consumer Staples,"Food, Beverage & Tobacco",Food Products,Agricultural Products
+TAP,Consumer Staples,"Food, Beverage & Tobacco",Beverages,Brewers
+BF.B,Consumer Staples,"Food, Beverage & Tobacco",Beverages,Distillers & Vintners
+STZ,Consumer Staples,"Food, Beverage & Tobacco",Beverages,Distillers & Vintners
+WBA,Consumer Staples,Food & Staples Retailing,Food & Staples Retailing,Drug Retail
+SYY,Consumer Staples,Food & Staples Retailing,Food & Staples Retailing,Food Distributors
+KR,Consumer Staples,Food & Staples Retailing,Food & Staples Retailing,Food Retail
+CHD,Consumer Staples,Household & Personal Products,Household Products,Household Products
+CLX,Consumer Staples,Household & Personal Products,Household Products,Household Products
+CL,Consumer Staples,Household & Personal Products,Household Products,Household Products
+KMB,Consumer Staples,Household & Personal Products,Household Products,Household Products
+COST,Consumer Staples,Food & Staples Retailing,Food & Staples Retailing,Hypermarkets & Super Centers
+WMT,Consumer Staples,Food & Staples Retailing,Food & Staples Retailing,Hypermarkets & Super Centers
+CPB,Consumer Staples,"Food, Beverage & Tobacco",Food Products,Packaged Foods & Meats
+CAG,Consumer Staples,"Food, Beverage & Tobacco",Food Products,Packaged Foods & Meats
+GIS,Consumer Staples,"Food, Beverage & Tobacco",Food Products,Packaged Foods & Meats
+HSY,Consumer Staples,"Food, Beverage & Tobacco",Food Products,Packaged Foods & Meats
+HRL,Consumer Staples,"Food, Beverage & Tobacco",Food Products,Packaged Foods & Meats
+SJM,Consumer Staples,"Food, Beverage & Tobacco",Food Products,Packaged Foods & Meats
+K,Consumer Staples,"Food, Beverage & Tobacco",Food Products,Packaged Foods & Meats
+KHC,Consumer Staples,"Food, Beverage & Tobacco",Food Products,Packaged Foods & Meats
+LW,Consumer Staples,"Food, Beverage & Tobacco",Food Products,Packaged Foods & Meats
+MKC,Consumer Staples,"Food, Beverage & Tobacco",Food Products,Packaged Foods & Meats
+MDLZ,Consumer Staples,"Food, Beverage & Tobacco",Food Products,Packaged Foods & Meats
+TSN,Consumer Staples,"Food, Beverage & Tobacco",Food Products,Packaged Foods & Meats
+EL,Consumer Staples,Household & Personal Products,Personal Products,Personal Products
+PG,Consumer Staples,Household & Personal Products,Personal Products,Personal Products
+KO,Consumer Staples,"Food, Beverage & Tobacco",Beverages,Soft Drinks
+MNST,Consumer Staples,"Food, Beverage & Tobacco",Beverages,Soft Drinks
+PEP,Consumer Staples,"Food, Beverage & Tobacco",Beverages,Soft Drinks
+MO,Consumer Staples,"Food, Beverage & Tobacco",Tobacco,Tobacco
+PM,Consumer Staples,"Food, Beverage & Tobacco",Tobacco,Tobacco
+CVX,Energy,Energy,"Oil, Gas & Consumable Fuels",Integrated Oil & Gas
+XOM,Energy,Energy,"Oil, Gas & Consumable Fuels",Integrated Oil & Gas
+HES,Energy,Energy,"Oil, Gas & Consumable Fuels",Integrated Oil & Gas
+BKR,Energy,Energy,Energy Equipment & Services,Oil & Gas Equipment & Services
+HAL,Energy,Energy,Energy Equipment & Services,Oil & Gas Equipment & Services
+NOV,Energy,Energy,Energy Equipment & Services,Oil & Gas Equipment & Services
+SLB,Energy,Energy,Energy Equipment & Services,Oil & Gas Equipment & Services
+FTI,Energy,Energy,Energy Equipment & Services,Oil & Gas Equipment & Services
+APA,Energy,Energy,"Oil, Gas & Consumable Fuels",Oil & Gas Exploration & Production
+COG,Energy,Energy,"Oil, Gas & Consumable Fuels",Oil & Gas Exploration & Production
+CXO,Energy,Energy,"Oil, Gas & Consumable Fuels",Oil & Gas Exploration & Production
+COP,Energy,Energy,"Oil, Gas & Consumable Fuels",Oil & Gas Exploration & Production
+DVN,Energy,Energy,"Oil, Gas & Consumable Fuels",Oil & Gas Exploration & Production
+FANG,Energy,Energy,"Oil, Gas & Consumable Fuels",Oil & Gas Exploration & Production
+EOG,Energy,Energy,"Oil, Gas & Consumable Fuels",Oil & Gas Exploration & Production
+MRO,Energy,Energy,"Oil, Gas & Consumable Fuels",Oil & Gas Exploration & Production
+OXY,Energy,Energy,"Oil, Gas & Consumable Fuels",Oil & Gas Exploration & Production
+PXD,Energy,Energy,"Oil, Gas & Consumable Fuels",Oil & Gas Exploration & Production
+HFC,Energy,Energy,"Oil, Gas & Consumable Fuels",Oil & Gas Refining & Marketing
+MPC,Energy,Energy,"Oil, Gas & Consumable Fuels",Oil & Gas Refining & Marketing
+PSX,Energy,Energy,"Oil, Gas & Consumable Fuels",Oil & Gas Refining & Marketing
+VLO,Energy,Energy,"Oil, Gas & Consumable Fuels",Oil & Gas Refining & Marketing
+KMI,Energy,Energy,"Oil, Gas & Consumable Fuels",Oil & Gas Storage & Transportation
+OKE,Energy,Energy,"Oil, Gas & Consumable Fuels",Oil & Gas Storage & Transportation
+WMB,Energy,Energy,"Oil, Gas & Consumable Fuels",Oil & Gas Storage & Transportation
+AMP,Financials,Diversified Financials,Capital Markets,Asset Management & Custody Banks
+BK,Financials,Diversified Financials,Capital Markets,Asset Management & Custody Banks
+BLK,Financials,Diversified Financials,Capital Markets,Asset Management & Custody Banks
+BEN,Financials,Diversified Financials,Capital Markets,Asset Management & Custody Banks
+IVZ,Financials,Diversified Financials,Capital Markets,Asset Management & Custody Banks
+NTRS,Financials,Diversified Financials,Capital Markets,Asset Management & Custody Banks
+STT,Financials,Diversified Financials,Capital Markets,Asset Management & Custody Banks
+TROW,Financials,Diversified Financials,Capital Markets,Asset Management & Custody Banks
+AXP,Financials,Diversified Financials,Consumer Finance,Consumer Finance
+COF,Financials,Diversified Financials,Consumer Finance,Consumer Finance
+DFS,Financials,Diversified Financials,Consumer Finance,Consumer Finance
+SYF,Financials,Diversified Financials,Consumer Finance,Consumer Finance
+BAC,Financials,Banks,Banks,Diversified Banks
+C,Financials,Banks,Banks,Diversified Banks
+CMA,Financials,Banks,Banks,Diversified Banks
+JPM,Financials,Banks,Banks,Diversified Banks
+USB,Financials,Banks,Banks,Diversified Banks
+WFC,Financials,Banks,Banks,Diversified Banks
+CBOE,Financials,Diversified Financials,Capital Markets,Financial Exchanges & Data
+CME,Financials,Diversified Financials,Capital Markets,Financial Exchanges & Data
+ICE,Financials,Diversified Financials,Capital Markets,Financial Exchanges & Data
+MKTX,Financials,Diversified Financials,Capital Markets,Financial Exchanges & Data
+MCO,Financials,Diversified Financials,Capital Markets,Financial Exchanges & Data
+MSCI,Financials,Diversified Financials,Capital Markets,Financial Exchanges & Data
+NDAQ,Financials,Diversified Financials,Capital Markets,Financial Exchanges & Data
+SPGI,Financials,Diversified Financials,Capital Markets,Financial Exchanges & Data
+AON,Financials,Insurance,Insurance,Insurance Brokers
+AJG,Financials,Insurance,Insurance,Insurance Brokers
+MMC,Financials,Insurance,Insurance,Insurance Brokers
+WLTW,Financials,Insurance,Insurance,Insurance Brokers
+SCHW,Financials,Diversified Financials,Capital Markets,Investment Banking & Brokerage
+GS,Financials,Diversified Financials,Capital Markets,Investment Banking & Brokerage
+MS,Financials,Diversified Financials,Capital Markets,Investment Banking & Brokerage
+RJF,Financials,Diversified Financials,Capital Markets,Investment Banking & Brokerage
+AFL,Financials,Insurance,Insurance,Life & Health Insurance
+GL,Financials,Insurance,Insurance,Life & Health Insurance
+MET,Financials,Insurance,Insurance,Life & Health Insurance
+PFG,Financials,Insurance,Insurance,Life & Health Insurance
+PRU,Financials,Insurance,Insurance,Life & Health Insurance
+UNM,Financials,Insurance,Insurance,Life & Health Insurance
+AIZ,Financials,Insurance,Insurance,Multi-line Insurance
+LNC,Financials,Insurance,Insurance,Multi-line Insurance
+L,Financials,Insurance,Insurance,Multi-line Insurance
+BRK.B,Financials,Diversified Financials,Diversified Financial Services,Multi-Sector Holdings
+ALL,Financials,Insurance,Insurance,Property & Casualty Insurance
+AIG,Financials,Insurance,Insurance,Property & Casualty Insurance
+CB,Financials,Insurance,Insurance,Property & Casualty Insurance
+CINF,Financials,Insurance,Insurance,Property & Casualty Insurance
+HIG,Financials,Insurance,Insurance,Property & Casualty Insurance
+PGR,Financials,Insurance,Insurance,Property & Casualty Insurance
+TRV,Financials,Insurance,Insurance,Property & Casualty Insurance
+WRB,Financials,Insurance,Insurance,Property & Casualty Insurance
+CFG,Financials,Banks,Banks,Regional Banks
+FITB,Financials,Banks,Banks,Regional Banks
+FRC,Financials,Banks,Banks,Regional Banks
+HBAN,Financials,Banks,Banks,Regional Banks
+KEY,Financials,Banks,Banks,Regional Banks
+MTB,Financials,Banks,Banks,Regional Banks
+PNC,Financials,Banks,Banks,Regional Banks
+RF,Financials,Banks,Banks,Regional Banks
+SIVB,Financials,Banks,Banks,Regional Banks
+TFC,Financials,Banks,Banks,Regional Banks
+ZION,Financials,Banks,Banks,Regional Banks
+RE,Financials,Banks,Banks,Reinsurance
+PBCT,Financials,Banks,Thrifts & Mortgage Finance,Thrifts & Mortgage Finance
+AMGN,Health Care,"Pharmaceuticals, Biotechnology & Life Sciences",Biotechnology,Biotechnology
+BIIB,Health Care,"Pharmaceuticals, Biotechnology & Life Sciences",Biotechnology,Biotechnology
+GILD,Health Care,"Pharmaceuticals, Biotechnology & Life Sciences",Biotechnology,Biotechnology
+INCY,Health Care,"Pharmaceuticals, Biotechnology & Life Sciences",Biotechnology,Biotechnology
+REGN,Health Care,"Pharmaceuticals, Biotechnology & Life Sciences",Biotechnology,Biotechnology
+VRTX,Health Care,"Pharmaceuticals, Biotechnology & Life Sciences",Biotechnology,Biotechnology
+ABC,Health Care,Health Care Equipment & Services,Health Care Providers & Services,Health Care Distributors
+BMY,Health Care,Health Care Equipment & Services,Health Care Providers & Services,Health Care Distributors
+CAH,Health Care,Health Care Equipment & Services,Health Care Providers & Services,Health Care Distributors
+HSIC,Health Care,Health Care Equipment & Services,Health Care Providers & Services,Health Care Distributors
+MCK,Health Care,Health Care Equipment & Services,Health Care Providers & Services,Health Care Distributors
+WAT,Health Care,Health Care Equipment & Services,Health Care Providers & Services,Health Care Distributors
+ABT,Health Care,Health Care Equipment & Services,Health Care Equipment & Supplies,Health Care Equipment
+ABMD,Health Care,Health Care Equipment & Services,Health Care Equipment & Supplies,Health Care Equipment
+A,Health Care,Health Care Equipment & Services,Health Care Equipment & Supplies,Health Care Equipment
+BAX,Health Care,Health Care Equipment & Services,Health Care Equipment & Supplies,Health Care Equipment
+BDX,Health Care,Health Care Equipment & Services,Health Care Equipment & Supplies,Health Care Equipment
+BSX,Health Care,Health Care Equipment & Services,Health Care Equipment & Supplies,Health Care Equipment
+DHR,Health Care,Health Care Equipment & Services,Health Care Equipment & Supplies,Health Care Equipment
+DXCM,Health Care,Health Care Equipment & Services,Health Care Equipment & Supplies,Health Care Equipment
+EW,Health Care,Health Care Equipment & Services,Health Care Equipment & Supplies,Health Care Equipment
+HOLX,Health Care,Health Care Equipment & Services,Health Care Equipment & Supplies,Health Care Equipment
+IDXX,Health Care,Health Care Equipment & Services,Health Care Equipment & Supplies,Health Care Equipment
+ISRG,Health Care,Health Care Equipment & Services,Health Care Equipment & Supplies,Health Care Equipment
+MDT,Health Care,Health Care Equipment & Services,Health Care Equipment & Supplies,Health Care Equipment
+PKI,Health Care,Health Care Equipment & Services,Health Care Equipment & Supplies,Health Care Equipment
+RMD,Health Care,Health Care Equipment & Services,Health Care Equipment & Supplies,Health Care Equipment
+STE,Health Care,Health Care Equipment & Services,Health Care Equipment & Supplies,Health Care Equipment
+SYK,Health Care,Health Care Equipment & Services,Health Care Equipment & Supplies,Health Care Equipment
+TFX,Health Care,Health Care Equipment & Services,Health Care Equipment & Supplies,Health Care Equipment
+VAR,Health Care,Health Care Equipment & Services,Health Care Equipment & Supplies,Health Care Equipment
+ZBH,Health Care,Health Care Equipment & Services,Health Care Equipment & Supplies,Health Care Equipment
+DVA,Health Care,Health Care Equipment & Services,Health Care Providers & Services,Health Care Facilities
+HCA,Health Care,Health Care Equipment & Services,Health Care Providers & Services,Health Care Facilities
+UHS,Health Care,Health Care Equipment & Services,Health Care Providers & Services,Health Care Facilities
+CVS,Health Care,Health Care Equipment & Services,Health Care Providers & Services,Health Care Services
+LH,Health Care,Health Care Equipment & Services,Health Care Providers & Services,Health Care Services
+DGX,Health Care,Health Care Equipment & Services,Health Care Providers & Services,Health Care Services
+ALGN,Health Care,Health Care Equipment & Services,Health Care Providers & Services,Health Care Supplies
+COO,Health Care,Health Care Equipment & Services,Health Care Providers & Services,Health Care Supplies
+XRAY,Health Care,Health Care Equipment & Services,Health Care Providers & Services,Health Care Supplies
+WST,Health Care,Health Care Equipment & Services,Health Care Providers & Services,Health Care Supplies
+CERN,Health Care,Health Care Equipment & Services,Health Care Technology,Health Care Technology
+BIO,Health Care,"Pharmaceuticals, Biotechnology & Life Sciences",Life Sciences Tools & Services,Life Sciences Tools & Services
+ILMN,Health Care,"Pharmaceuticals, Biotechnology & Life Sciences",Life Sciences Tools & Services,Life Sciences Tools & Services
+IQV,Health Care,"Pharmaceuticals, Biotechnology & Life Sciences",Life Sciences Tools & Services,Life Sciences Tools & Services
+MTD,Health Care,"Pharmaceuticals, Biotechnology & Life Sciences",Life Sciences Tools & Services,Life Sciences Tools & Services
+TMO,Health Care,"Pharmaceuticals, Biotechnology & Life Sciences",Life Sciences Tools & Services,Life Sciences Tools & Services
+ANTM,Health Care,Health Care Equipment & Services,Health Care Providers & Services,Managed Health Care
+CNC,Health Care,Health Care Equipment & Services,Health Care Providers & Services,Managed Health Care
+CI,Health Care,Health Care Equipment & Services,Health Care Providers & Services,Managed Health Care
+HUM,Health Care,Health Care Equipment & Services,Health Care Providers & Services,Managed Health Care
+UNH,Health Care,Health Care Equipment & Services,Health Care Providers & Services,Managed Health Care
+ABBV,Health Care,"Pharmaceuticals, Biotechnology & Life Sciences",Pharmaceuticals,Pharmaceuticals
+ALXN,Health Care,"Pharmaceuticals, Biotechnology & Life Sciences",Pharmaceuticals,Pharmaceuticals
+CTLT,Health Care,"Pharmaceuticals, Biotechnology & Life Sciences",Pharmaceuticals,Pharmaceuticals
+JNJ,Health Care,"Pharmaceuticals, Biotechnology & Life Sciences",Pharmaceuticals,Pharmaceuticals
+LLY,Health Care,"Pharmaceuticals, Biotechnology & Life Sciences",Pharmaceuticals,Pharmaceuticals
+MRK,Health Care,"Pharmaceuticals, Biotechnology & Life Sciences",Pharmaceuticals,Pharmaceuticals
+PRGO,Health Care,"Pharmaceuticals, Biotechnology & Life Sciences",Pharmaceuticals,Pharmaceuticals
+PFE,Health Care,"Pharmaceuticals, Biotechnology & Life Sciences",Pharmaceuticals,Pharmaceuticals
+VTRS,Health Care,"Pharmaceuticals, Biotechnology & Life Sciences",Pharmaceuticals,Pharmaceuticals
+ZTS,Health Care,"Pharmaceuticals, Biotechnology & Life Sciences",Pharmaceuticals,Pharmaceuticals
+BA,Industrials,Capital Goods,Aerospace & Defense,Aerospace & Defense
+GD,Industrials,Capital Goods,Aerospace & Defense,Aerospace & Defense
+HWM,Industrials,Capital Goods,Aerospace & Defense,Aerospace & Defense
+HII,Industrials,Capital Goods,Aerospace & Defense,Aerospace & Defense
+LHX,Industrials,Capital Goods,Aerospace & Defense,Aerospace & Defense
+LMT,Industrials,Capital Goods,Aerospace & Defense,Aerospace & Defense
+NOC,Industrials,Capital Goods,Aerospace & Defense,Aerospace & Defense
+RTX,Industrials,Capital Goods,Aerospace & Defense,Aerospace & Defense
+TDY,Industrials,Capital Goods,Aerospace & Defense,Aerospace & Defense
+TXT,Industrials,Capital Goods,Aerospace & Defense,Aerospace & Defense
+TDG,Industrials,Capital Goods,Aerospace & Defense,Aerospace & Defense
+DE,Industrials,Capital Goods,Machinery,Agricultural & Farm Machinery
+CHRW,Industrials,Transportation,Air Freight & Logistics,Air Freight & Logistics
+EXPD,Industrials,Transportation,Air Freight & Logistics,Air Freight & Logistics
+FDX,Industrials,Transportation,Air Freight & Logistics,Air Freight & Logistics
+UPS,Industrials,Transportation,Air Freight & Logistics,Air Freight & Logistics
+ALK,Industrials,Transportation,Airlines,Airlines
+AAL,Industrials,Transportation,Airlines,Airlines
+DAL,Industrials,Transportation,Airlines,Airlines
+LUV,Industrials,Transportation,Airlines,Airlines
+UAL,Industrials,Transportation,Airlines,Airlines
+ALLE,Industrials,Capital Goods,Building Products,Building Products
+AOS,Industrials,Capital Goods,Building Products,Building Products
+CARR,Industrials,Capital Goods,Building Products,Building Products
+FAST,Industrials,Capital Goods,Building Products,Building Products
+FBHS,Industrials,Capital Goods,Building Products,Building Products
+JCI,Industrials,Capital Goods,Building Products,Building Products
+MAS,Industrials,Capital Goods,Building Products,Building Products
+TT,Industrials,Capital Goods,Building Products,Building Products
+J,Industrials,Capital Goods,Construction & Engineering,Construction & Engineering
+PWR,Industrials,Capital Goods,Construction & Engineering,Construction & Engineering
+CAT,Industrials,Capital Goods,Machinery,Construction Machinery & Heavy Trucks
+PCAR,Industrials,Capital Goods,Machinery,Construction Machinery & Heavy Trucks
+WAB,Industrials,Capital Goods,Machinery,Construction Machinery & Heavy Trucks
+CTAS,Industrials,Commercial  & Professional Services,Commercial Services & Supplies,Diversified Support Services
+CPRT,Industrials,Commercial  & Professional Services,Commercial Services & Supplies,Diversified Support Services
+AME,Industrials,Capital Goods,Electrical Equipment,Electrical Components & Equipment
+ETN,Industrials,Capital Goods,Electrical Equipment,Electrical Components & Equipment
+EMR,Industrials,Capital Goods,Electrical Equipment,Electrical Components & Equipment
+ROK,Industrials,Capital Goods,Electrical Equipment,Electrical Components & Equipment
+RSG,Industrials,Commercial  & Professional Services,Commercial Services & Supplies,Environmental & Facilities Services
+ROL,Industrials,Commercial  & Professional Services,Commercial Services & Supplies,Environmental & Facilities Services
+WM,Industrials,Commercial  & Professional Services,Commercial Services & Supplies,Environmental & Facilities Services
+RHI,Industrials,Commercial  & Professional Services,Professional Services,Human Resource & Employment Services
+MMM,Industrials,Capital Goods,Industrial Conglomerates,Industrial Conglomerates
+GE,Industrials,Capital Goods,Industrial Conglomerates,Industrial Conglomerates
+HON,Industrials,Capital Goods,Industrial Conglomerates,Industrial Conglomerates
+ROP,Industrials,Capital Goods,Industrial Conglomerates,Industrial Conglomerates
+CMI,Industrials,Capital Goods,Machinery,Industrial Machinery
+DOV,Industrials,Capital Goods,Machinery,Industrial Machinery
+FLS,Industrials,Capital Goods,Machinery,Industrial Machinery
+FTV,Industrials,Capital Goods,Machinery,Industrial Machinery
+GWW,Industrials,Capital Goods,Machinery,Industrial Machinery
+IEX,Industrials,Capital Goods,Machinery,Industrial Machinery
+ITW,Industrials,Capital Goods,Machinery,Industrial Machinery
+IR,Industrials,Capital Goods,Machinery,Industrial Machinery
+OTIS,Industrials,Capital Goods,Machinery,Industrial Machinery
+PH,Industrials,Capital Goods,Machinery,Industrial Machinery
+PNR,Industrials,Capital Goods,Machinery,Industrial Machinery
+SNA,Industrials,Capital Goods,Machinery,Industrial Machinery
+SWK,Industrials,Capital Goods,Machinery,Industrial Machinery
+XYL,Industrials,Capital Goods,Machinery,Industrial Machinery
+CSX,Industrials,Transportation,Road & Rail,Railroads
+KSU,Industrials,Transportation,Road & Rail,Railroads
+NSC,Industrials,Transportation,Road & Rail,Railroads
+UNP,Industrials,Transportation,Road & Rail,Railroads
+EFX,Industrials,Commercial  & Professional Services,Professional Services,Research & Consulting Services
+INFO,Industrials,Commercial  & Professional Services,Professional Services,Research & Consulting Services
+NLSN,Industrials,Commercial  & Professional Services,Professional Services,Research & Consulting Services
+VRSK,Industrials,Commercial  & Professional Services,Professional Services,Research & Consulting Services
+URI,Industrials,Capital Goods,Trading Companies & Distributors,Trading Companies & Distributors
+JBHT,Industrials,Transportation,Road & Rail,Trucking
+ODFL,Industrials,Transportation,Road & Rail,Trucking
+ADBE,Information Technology,Software & Services,Software,Application Software
+ANSS,Information Technology,Software & Services,Software,Application Software
+ADSK,Information Technology,Software & Services,Software,Application Software
+CDNS,Information Technology,Software & Services,Software,Application Software
+CTXS,Information Technology,Software & Services,Software,Application Software
+INTU,Information Technology,Software & Services,Software,Application Software
+NLOK,Information Technology,Software & Services,Software,Application Software
+ORCL,Information Technology,Software & Services,Software,Application Software
+PAYC,Information Technology,Software & Services,Software,Application Software
+CRM,Information Technology,Software & Services,Software,Application Software
+SNPS,Information Technology,Software & Services,Software,Application Software
+TYL,Information Technology,Software & Services,Software,Application Software
+ANET,Information Technology,Technology Hardware & Equipment,Communications Equipment,Communications Equipment
+CSCO,Information Technology,Technology Hardware & Equipment,Communications Equipment,Communications Equipment
+FFIV,Information Technology,Technology Hardware & Equipment,Communications Equipment,Communications Equipment
+JNPR,Information Technology,Technology Hardware & Equipment,Communications Equipment,Communications Equipment
+MSI,Information Technology,Technology Hardware & Equipment,Communications Equipment,Communications Equipment
+ADP,Information Technology,Software & Services,IT Services,Data Processing & Outsourced Services
+BR,Information Technology,Software & Services,IT Services,Data Processing & Outsourced Services
+FIS,Information Technology,Software & Services,IT Services,Data Processing & Outsourced Services
+FISV,Information Technology,Software & Services,IT Services,Data Processing & Outsourced Services
+FLT,Information Technology,Software & Services,IT Services,Data Processing & Outsourced Services
+GPN,Information Technology,Software & Services,IT Services,Data Processing & Outsourced Services
+JKHY,Information Technology,Software & Services,IT Services,Data Processing & Outsourced Services
+MA,Information Technology,Software & Services,IT Services,Data Processing & Outsourced Services
+PAYX,Information Technology,Software & Services,IT Services,Data Processing & Outsourced Services
+PYPL,Information Technology,Software & Services,IT Services,Data Processing & Outsourced Services
+V,Information Technology,Software & Services,IT Services,Data Processing & Outsourced Services
+WU,Information Technology,Software & Services,IT Services,Data Processing & Outsourced Services
+APH,Information Technology,Technology Hardware & Equipment,"Electronic Equipment, Instruments & Components",Electronic Components
+GLW,Information Technology,Technology Hardware & Equipment,"Electronic Equipment, Instruments & Components",Electronic Components
+FLIR,Information Technology,Technology Hardware & Equipment,"Electronic Equipment, Instruments & Components",Electronic Equipment & Instruments
+KEYS,Information Technology,Technology Hardware & Equipment,"Electronic Equipment, Instruments & Components",Electronic Equipment & Instruments
+VNT,Information Technology,Technology Hardware & Equipment,"Electronic Equipment, Instruments & Components",Electronic Equipment & Instruments
+ZBRA,Information Technology,Technology Hardware & Equipment,"Electronic Equipment, Instruments & Components",Electronic Equipment & Instruments
+IPGP,Information Technology,Technology Hardware & Equipment,"Electronic Equipment, Instruments & Components",Electronic Manufacturing Services
+TEL,Information Technology,Technology Hardware & Equipment,"Electronic Equipment, Instruments & Components",Electronic Manufacturing Services
+AKAM,Information Technology,Software & Services,IT Services,Internet Services & Infrastructure
+VRSN,Information Technology,Software & Services,IT Services,Internet Services & Infrastructure
+ACN,Information Technology,Software & Services,IT Services,IT Consulting & Other Services
+CTSH,Information Technology,Software & Services,IT Services,IT Consulting & Other Services
+DXC,Information Technology,Software & Services,IT Services,IT Consulting & Other Services
+IT,Information Technology,Software & Services,IT Services,IT Consulting & Other Services
+IBM,Information Technology,Software & Services,IT Services,IT Consulting & Other Services
+LDOS,Information Technology,Software & Services,IT Services,IT Consulting & Other Services
+AMAT,Information Technology,Semiconductors & Semiconductor Equipment,Semiconductors & Semiconductor Equipment,Semiconductor Equipment
+ENPH,Information Technology,Semiconductors & Semiconductor Equipment,Semiconductors & Semiconductor Equipment,Semiconductor Equipment
+KLAC,Information Technology,Semiconductors & Semiconductor Equipment,Semiconductors & Semiconductor Equipment,Semiconductor Equipment
+LRCX,Information Technology,Semiconductors & Semiconductor Equipment,Semiconductors & Semiconductor Equipment,Semiconductor Equipment
+TER,Information Technology,Semiconductors & Semiconductor Equipment,Semiconductors & Semiconductor Equipment,Semiconductor Equipment
+AMD,Information Technology,Semiconductors & Semiconductor Equipment,Semiconductors & Semiconductor Equipment,Semiconductors
+ADI,Information Technology,Semiconductors & Semiconductor Equipment,Semiconductors & Semiconductor Equipment,Semiconductors
+AVGO,Information Technology,Semiconductors & Semiconductor Equipment,Semiconductors & Semiconductor Equipment,Semiconductors
+INTC,Information Technology,Semiconductors & Semiconductor Equipment,Semiconductors & Semiconductor Equipment,Semiconductors
+MXIM,Information Technology,Semiconductors & Semiconductor Equipment,Semiconductors & Semiconductor Equipment,Semiconductors
+MCHP,Information Technology,Semiconductors & Semiconductor Equipment,Semiconductors & Semiconductor Equipment,Semiconductors
+MU,Information Technology,Semiconductors & Semiconductor Equipment,Semiconductors & Semiconductor Equipment,Semiconductors
+NVDA,Information Technology,Semiconductors & Semiconductor Equipment,Semiconductors & Semiconductor Equipment,Semiconductors
+QRVO,Information Technology,Semiconductors & Semiconductor Equipment,Semiconductors & Semiconductor Equipment,Semiconductors
+QCOM,Information Technology,Semiconductors & Semiconductor Equipment,Semiconductors & Semiconductor Equipment,Semiconductors
+SWKS,Information Technology,Semiconductors & Semiconductor Equipment,Semiconductors & Semiconductor Equipment,Semiconductors
+TXN,Information Technology,Semiconductors & Semiconductor Equipment,Semiconductors & Semiconductor Equipment,Semiconductors
+XLNX,Information Technology,Semiconductors & Semiconductor Equipment,Semiconductors & Semiconductor Equipment,Semiconductors
+FTNT,Information Technology,Software & Services,Software,Systems Software
+MSFT,Information Technology,Software & Services,Software,Systems Software
+NOW,Information Technology,Software & Services,Software,Systems Software
+CDW,Information Technology,Technology Hardware & Equipment,"Electronic Equipment, Instruments & Components",Technology Distributors
+AAPL,Information Technology,Technology Hardware & Equipment,"Technology Hardware, Storage & Peripherals","Technology Hardware, Storage & Peripherals"
+HPE,Information Technology,Technology Hardware & Equipment,"Technology Hardware, Storage & Peripherals","Technology Hardware, Storage & Peripherals"
+HPQ,Information Technology,Technology Hardware & Equipment,"Technology Hardware, Storage & Peripherals","Technology Hardware, Storage & Peripherals"
+NTAP,Information Technology,Technology Hardware & Equipment,"Technology Hardware, Storage & Peripherals","Technology Hardware, Storage & Peripherals"
+STX,Information Technology,Technology Hardware & Equipment,"Technology Hardware, Storage & Peripherals","Technology Hardware, Storage & Peripherals"
+WDC,Information Technology,Technology Hardware & Equipment,"Technology Hardware, Storage & Peripherals","Technology Hardware, Storage & Peripherals"
+XRX,Information Technology,Technology Hardware & Equipment,"Technology Hardware, Storage & Peripherals","Technology Hardware, Storage & Peripherals"
+DOW,Materials,Materials,Chemicals,Commodity Chemicals
+MLM,Materials,Materials,Construction Materials,Construction Materials
+VMC,Materials,Materials,Construction Materials,Construction Materials
+FCX,Materials,Materials,Metals & Mining,Copper
+EMN,Materials,Materials,Chemicals,Diversified Chemicals
+CF,Materials,Materials,Chemicals,Fertilizers & Agricultural Chemicals
+CTVA,Materials,Materials,Chemicals,Fertilizers & Agricultural Chemicals
+FMC,Materials,Materials,Chemicals,Fertilizers & Agricultural Chemicals
+MOS,Materials,Materials,Chemicals,Fertilizers & Agricultural Chemicals
+NEM,Materials,Materials,Metals & Mining,Gold
+APD,Materials,Materials,Chemicals,Industrial Gases
+LIN,Materials,Materials,Chemicals,Industrial Gases
+BLL,Materials,Materials,Containers & Packaging,Metal & Glass Containers
+AMCR,Materials,Materials,Containers & Packaging,Paper Packaging
+AVY,Materials,Materials,Containers & Packaging,Paper Packaging
+IP,Materials,Materials,Containers & Packaging,Paper Packaging
+PKG,Materials,Materials,Containers & Packaging,Paper Packaging
+SEE,Materials,Materials,Containers & Packaging,Paper Packaging
+WRK,Materials,Materials,Containers & Packaging,Paper Packaging
+ALB,Materials,Materials,Chemicals,Specialty Chemicals
+CE,Materials,Materials,Chemicals,Specialty Chemicals
+DD,Materials,Materials,Chemicals,Specialty Chemicals
+ECL,Materials,Materials,Chemicals,Specialty Chemicals
+IFF,Materials,Materials,Chemicals,Specialty Chemicals
+LYB,Materials,Materials,Chemicals,Specialty Chemicals
+PPG,Materials,Materials,Chemicals,Specialty Chemicals
+SHW,Materials,Materials,Chemicals,Specialty Chemicals
+NUE,Materials,Materials,Metals & Mining,Steel
+PEAK,Real Estate,Real Estate,"Equity Real Estate 
+Investment Trusts 
+(REITs)",Health Care REITs
+VTR,Real Estate,Real Estate,"Equity Real Estate 
+Investment Trusts 
+(REITs)",Health Care REITs
+WELL,Real Estate,Real Estate,"Equity Real Estate 
+Investment Trusts 
+(REITs)",Health Care REITs
+HST,Real Estate,Real Estate,"Equity Real Estate 
+Investment Trusts 
+(REITs)",Hotel & Resort REITs
+DRE,Real Estate,Real Estate,"Equity Real Estate 
+Investment Trusts 
+(REITs)",Industrial REITs
+PLD,Real Estate,Real Estate,"Equity Real Estate 
+Investment Trusts 
+(REITs)",Industrial REITs
+ARE,Real Estate,Real Estate,"Equity Real Estate 
+Investment Trusts 
+(REITs)",Office REITs
+BXP,Real Estate,Real Estate,"Equity Real Estate 
+Investment Trusts 
+(REITs)",Office REITs
+SLG,Real Estate,Real Estate,"Equity Real Estate 
+Investment Trusts 
+(REITs)",Office REITs
+VNO,Real Estate,Real Estate,"Equity Real Estate 
+Investment Trusts 
+(REITs)",Office REITs
+CBRE,Real Estate,Real Estate,Real Estate Management & Development,Real Estate Services
+AVB,Real Estate,Real Estate,"Equity Real Estate 
+Investment Trusts 
+(REITs)",Residential REITs
+EQR,Real Estate,Real Estate,"Equity Real Estate 
+Investment Trusts 
+(REITs)",Residential REITs
+ESS,Real Estate,Real Estate,"Equity Real Estate 
+Investment Trusts 
+(REITs)",Residential REITs
+MAA,Real Estate,Real Estate,"Equity Real Estate 
+Investment Trusts 
+(REITs)",Residential REITs
+UDR,Real Estate,Real Estate,"Equity Real Estate 
+Investment Trusts 
+(REITs)",Residential REITs
+FRT,Real Estate,Real Estate,"Equity Real Estate 
+Investment Trusts 
+(REITs)",Retail REITs
+KIM,Real Estate,Real Estate,"Equity Real Estate 
+Investment Trusts 
+(REITs)",Retail REITs
+O,Real Estate,Real Estate,"Equity Real Estate 
+Investment Trusts 
+(REITs)",Retail REITs
+REG,Real Estate,Real Estate,"Equity Real Estate 
+Investment Trusts 
+(REITs)",Retail REITs
+SPG,Real Estate,Real Estate,"Equity Real Estate 
+Investment Trusts 
+(REITs)",Retail REITs
+AMT,Real Estate,Real Estate,"Equity Real Estate 
+Investment Trusts 
+(REITs)",Specialized REITs
+CCI,Real Estate,Real Estate,"Equity Real Estate 
+Investment Trusts 
+(REITs)",Specialized REITs
+DLR,Real Estate,Real Estate,"Equity Real Estate 
+Investment Trusts 
+(REITs)",Specialized REITs
+EQIX,Real Estate,Real Estate,"Equity Real Estate 
+Investment Trusts 
+(REITs)",Specialized REITs
+EXR,Real Estate,Real Estate,"Equity Real Estate 
+Investment Trusts 
+(REITs)",Specialized REITs
+IRM,Real Estate,Real Estate,"Equity Real Estate 
+Investment Trusts 
+(REITs)",Specialized REITs
+PSA,Real Estate,Real Estate,"Equity Real Estate 
+Investment Trusts 
+(REITs)",Specialized REITs
+SBAC,Real Estate,Real Estate,"Equity Real Estate 
+Investment Trusts 
+(REITs)",Specialized REITs
+WY,Real Estate,Real Estate,"Equity Real Estate 
+Investment Trusts 
+(REITs)",Specialized REITs
+LNT,Utilities,Utilities,Electric Utilities,Electric Utilities
+AEP,Utilities,Utilities,Electric Utilities,Electric Utilities
+ED,Utilities,Utilities,Electric Utilities,Electric Utilities
+D,Utilities,Utilities,Electric Utilities,Electric Utilities
+DUK,Utilities,Utilities,Electric Utilities,Electric Utilities
+EIX,Utilities,Utilities,Electric Utilities,Electric Utilities
+ETR,Utilities,Utilities,Electric Utilities,Electric Utilities
+EVRG,Utilities,Utilities,Electric Utilities,Electric Utilities
+FE,Utilities,Utilities,Electric Utilities,Electric Utilities
+PPL,Utilities,Utilities,Electric Utilities,Electric Utilities
+PEG,Utilities,Utilities,Electric Utilities,Electric Utilities
+SO,Utilities,Utilities,Electric Utilities,Electric Utilities
+WEC,Utilities,Utilities,Electric Utilities,Electric Utilities
+ATO,Utilities,Utilities,Gas Utilities,Gas Utilities
+AES,Utilities,Utilities,Independent Power Producers & Energy Traders,Independent Power Producers & Energy Traders
+NRG,Utilities,Utilities,Independent Power Producers & Energy Traders,Independent Power Producers & Energy Traders
+AEE,Utilities,Utilities,Multi-Utilities,Multi-Utilities
+CNP,Utilities,Utilities,Multi-Utilities,Multi-Utilities
+CMS,Utilities,Utilities,Multi-Utilities,Multi-Utilities
+DTE,Utilities,Utilities,Multi-Utilities,Multi-Utilities
+ES,Utilities,Utilities,Multi-Utilities,Multi-Utilities
+EXC,Utilities,Utilities,Multi-Utilities,Multi-Utilities
+NEE,Utilities,Utilities,Multi-Utilities,Multi-Utilities
+NI,Utilities,Utilities,Multi-Utilities,Multi-Utilities
+PNW,Utilities,Utilities,Multi-Utilities,Multi-Utilities
+SRE,Utilities,Utilities,Multi-Utilities,Multi-Utilities
+XEL,Utilities,Utilities,Multi-Utilities,Multi-Utilities
+AWK,Utilities,Utilities,Water Utilities,Water Utilities
+,,,,
