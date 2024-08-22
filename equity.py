@@ -10,10 +10,21 @@ from exceptions import SectorError
 import industries
 
 
+def read_api_keys(file):
+    try:
+        with open(file, 'r') as f:
+            api_keys = list(
+                filter(None, [line.rstrip('\n') for line in f if line])
+            )
+            return {k: v for k, v in zip(api_keys[0::2], api_keys[1::2])}
+    except FileNotFoundError:
+        print(f'File "{file}" was not found')
+
+
 class Stock:
 
-    AV_API_KEY = 'AIDD24S6AW4MOOHG'
-
+    AV_API_KEY = read_api_keys('api_keys.txt')['alphavantage']
+    
     def __init__(self, symbol):
         self.symbol = symbol
 
