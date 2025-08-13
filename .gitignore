@@ -5,8 +5,8 @@ pyproject.toml
 uv.lock
 
 # API Keys
-apikeys.txt
-apikeys.json
+api_ops/apikeys.txt
+api_ops/apikeys.json
 
 # Data
-/request_db/
+/alpha_vantage/request_db/

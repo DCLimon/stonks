@@ -21,7 +21,7 @@ from alpha_vantage.fundamentaldata import FundamentalData
 
 def get_api_key(api: str, key_file: Path = None) -> str:
     if key_file is None:
-        key_file = Path.cwd() / 'apikeys.json'
+        key_file = Path.cwd() / 'api_ops' / 'apikeys.json'
 
     try:
         with open(key_file, 'r') as f:

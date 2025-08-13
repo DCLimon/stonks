@@ -20,7 +20,7 @@ def read_api_keys(file):
 
 
 class Overview:
-    AV_API_KEY = read_api_keys('apikeys.txt')['alpha_vantage']
+    AV_API_KEY = read_api_keys('../api_ops/apikeys.txt')['alpha_vantage']
 
     def __init__(self, symbol):
         self.symbol = symbol
@@ -77,7 +77,7 @@ class IncomeStatement:
 
 
 class BalanceSheet:
-    AV_API_KEY = read_api_keys('apikeys.txt')['alpha_vantage']
+    AV_API_KEY = read_api_keys('../api_ops/apikeys.txt')['alpha_vantage']
 
     def __init__(self,
                  symbol: str,
