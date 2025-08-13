@@ -20,7 +20,7 @@ def read_api_keys(file):
 
 
 class Overview:
-    AV_API_KEY = read_api_keys('api_keys.txt')['alpha_vantage']
+    AV_API_KEY = read_api_keys('apikeys.txt')['alpha_vantage']
 
     def __init__(self, symbol):
         self.symbol = symbol
@@ -71,10 +71,18 @@ class Overview:
         return ov_data_series
 
 
-class BalanceSheet:
-    AV_API_KEY = read_api_keys('api_keys.txt')['alpha_vantage']
+class IncomeStatement:
+    def __init__(self, obj):
+        self._obj = obj
 
-    def __init__(self, symbol, freq='quarterly', periods=5):
+
+class BalanceSheet:
+    AV_API_KEY = read_api_keys('apikeys.txt')['alpha_vantage']
+
+    def __init__(self,
+                 symbol: str,
+                 freq: str = 'yearly',
+                 periods: int = 5):
         self.symbol = symbol
         self.freq = freq
         self.periods = periods

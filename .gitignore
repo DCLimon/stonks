@@ -1,2 +1,12 @@
+# Environment
+.python-version
+main.py
+pyproject.toml
+uv.lock
+
 # API Keys
 apikeys.txt
+apikeys.json
+
+# Data
+/request_db/
