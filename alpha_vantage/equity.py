@@ -33,7 +33,7 @@ def get_api_key(api: str, key_file: Path = None) -> str:
 
 
 class AVRequest:
-    API = 'alpha_vantage'
+    API = 'alpha_vantage_dcl'
 
     def __init__(self, fn: str, symbol: str, api_key: Optional[str] = None):
         self.fn = fn.upper()
@@ -65,7 +65,7 @@ class Stock:
     @api_key.setter
     def api_key(self, value):
         if value is None:
-            self._api_key = get_api_key('alpha_vantage')
+            self._api_key = get_api_key('alpha_vantage_dcl')
         else:
             self._api_key = value
 
